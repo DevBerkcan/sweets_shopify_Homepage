@@ -302,6 +302,27 @@
   }
 }
 
+/* ---------- Header/Announcement-Bar (Bestand): additive Optik ---------- */
+.t4s-announcement-bar {
+  font-family: var(--sweets-font-body);
+  letter-spacing: 0.02em;
+}
+
+.t4s-navigation .t4s-nav__ul > li.t4s-menu-item > a {
+  border-radius: var(--sweets-radius-sm);
+  transition: background-color 0.2s var(--sweets-ease);
+}
+
+.t4s-navigation .t4s-nav__ul > li.t4s-menu-item > a:hover {
+  background-color: rgba(22, 185, 218, 0.1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .t4s-navigation .t4s-nav__ul > li.t4s-menu-item > a {
+    transition: none;
+  }
+}
+
 /* ---------- Produktkarte (Bestand): additive Optik ---------- */
 .t4s-product.t4s-pr-style6 .t4s-product-inner {
   border-radius: var(--sweets-radius-md);
@@ -316,6 +337,40 @@
   font-family: var(--sweets-font-body);
 }
 
+.t4s-product.t4s-pr-style6 .t4s-product-price del {
+  color: var(--sweets-color-brown);
+  opacity: 0.6;
+}
+
+.t4s-product.t4s-pr-style6 .t4s-product-price ins {
+  color: var(--sweets-color-orange);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.t4s-product.t4s-pr-style6 .t4s-price__unit {
+  color: var(--sweets-color-brown);
+  opacity: 0.7;
+  font-size: 12px;
+}
+
+.t4s-product.t4s-pr-style6 .t4s-pr-addtocart {
+  border-radius: var(--sweets-radius-sm);
+  font-family: var(--sweets-font-body);
+  font-weight: 700;
+  transition: transform 0.2s var(--sweets-ease);
+}
+
+.t4s-product.t4s-pr-style6 .t4s-pr-addtocart:hover {
+  transform: translateY(-2px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .t4s-product.t4s-pr-style6 .t4s-pr-addtocart:hover {
+    transform: none;
+  }
+}
+
 /* ---------- Cart-Drawer (Bestand): additive Optik ---------- */
 #t4s-mini_cart {
   --sweets-cart-accent: var(--sweets-color-blue);
@@ -324,4 +379,20 @@
 #t4s-mini_cart .t4s-mini_cart__emty {
   font-family: var(--sweets-font-body);
   color: var(--sweets-color-brown);
+}
+
+#t4s-mini_cart .t4s-mini_cart__title,
+.t4s-page_cart__title {
+  font-family: var(--sweets-font-body);
+  color: var(--sweets-color-brown);
+  font-weight: 700;
+}
+
+#t4s-mini_cart .t4s-mini_cart__img {
+  border-radius: var(--sweets-radius-sm);
+}
+
+.t4s-cart_price {
+  color: var(--sweets-color-orange);
+  font-weight: 700;
 }
