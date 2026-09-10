@@ -42,6 +42,8 @@
   {{- 'base.css' | asset_url | stylesheet_tag: preload: true -}}
   {%- if isRTL %}{{- 'theme_rtl.css' | asset_url | stylesheet_tag: preload: true -}}{% endif -%}
   {%- if settings.bootstrap_css %}{{- 'bootstrap.min.css' | asset_url | stylesheet_tag -}}{% endif -%}
+  {{- 'sweets-design-system.css' | asset_url | stylesheet_tag: preload: true -}}
+  {{- 'sweets-sections.css' | asset_url | stylesheet_tag: preload: true -}}
 
   {%- style -%}
 

@@ -1,0 +1,34 @@
+/* Sweets aus aller Welt — Design-System-Tokens
+   Werte spiegeln config/settings_data.json (Colors-Gruppe). Bei Änderung der
+   Theme-Farbeinstellungen im Editor diese Datei manuell nachziehen. */
+:root {
+  --sweets-color-blue: #16b9da;
+  --sweets-color-brown: #723a2b;
+  --sweets-color-orange: #f8ab14;
+  --sweets-color-cream: #fffdf8;
+  --sweets-color-dark: #171717;
+  --sweets-color-white: #ffffff;
+
+  --sweets-font-heading: var(--font-family-1, "Fira Sans", sans-serif);
+  --sweets-font-body: var(--font-family-3, "Raleway", sans-serif);
+
+  --sweets-space-2xs: 8px;
+  --sweets-space-xs: 12px;
+  --sweets-space-sm: 20px;
+  --sweets-space-md: 32px;
+  --sweets-space-lg: 48px;
+  --sweets-space-xl: 72px;
+  --sweets-space-2xl: 96px;
+
+  --sweets-radius-sm: 12px;
+  --sweets-radius-md: 20px;
+  --sweets-radius-lg: 32px;
+
+  --sweets-ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --sweets-ease: linear;
+  }
+}

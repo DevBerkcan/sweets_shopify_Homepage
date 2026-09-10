@@ -1,0 +1,127 @@
+<!-- sections/sweets-hero.liquid -->
+{%- liquid
+  assign se_stts = section.settings
+  assign image = se_stts.image
+  assign image_mobile = se_stts.image_mobile | default: image
+-%}
+<section class="sweets-hero" data-section-id="{{ section.id }}" data-section-type="sweets-hero">
+  <div class="sweets-container sweets-hero__inner">
+    <div class="sweets-hero__content">
+      {%- if se_stts.heading != blank -%}
+        <h1 class="sweets-hero__heading">{{ se_stts.heading }}</h1>
+      {%- endif -%}
+      {%- if se_stts.subheading != blank -%}
+        <p class="sweets-hero__subheading">{{ se_stts.subheading }}</p>
+      {%- endif -%}
+      {%- if se_stts.primary_cta_link != blank or se_stts.secondary_cta_link != blank -%}
+        <div class="sweets-hero__ctas">
+          {%- if se_stts.primary_cta_link != blank and se_stts.primary_cta_label != blank -%}
+            <a href="{{ se_stts.primary_cta_link }}" class="sweets-btn sweets-btn--primary">{{ se_stts.primary_cta_label }}</a>
+          {%- endif -%}
+          {%- if se_stts.secondary_cta_link != blank and se_stts.secondary_cta_label != blank -%}
+            <a href="{{ se_stts.secondary_cta_link }}" class="sweets-btn sweets-btn--secondary">{{ se_stts.secondary_cta_label }}</a>
+          {%- endif -%}
+        </div>
+      {%- endif -%}
+    </div>
+    <div class="sweets-hero__media">
+      {%- if image -%}
+        <img
+          class="sweets-hero__image sweets-hero__image--desktop"
+          srcset="{{ image | image_url: width: 600 }} 600w, {{ image | image_url: width: 900 }} 900w, {{ image | image_url: width: 1200 }} 1200w, {{ image | image_url: width: 1600 }} 1600w"
+          sizes="(min-width: 990px) 50vw, 100vw"
+          src="{{ image | image_url: width: 900 }}"
+          width="{{ image.width }}"
+          height="{{ image.height }}"
+          alt="{{ image.alt | escape }}"
+          loading="eager"
+          fetchpriority="high"
+        >
+      {%- endif -%}
+      {%- if image_mobile -%}
+        <img
+          class="sweets-hero__image sweets-hero__image--mobile"
+          srcset="{{ image_mobile | image_url: width: 600 }} 600w, {{ image_mobile | image_url: width: 900 }} 900w"
+          sizes="100vw"
+          src="{{ image_mobile | image_url: width: 700 }}"
+          width="{{ image_mobile.width }}"
+          height="{{ image_mobile.height }}"
+          alt="{{ image_mobile.alt | escape }}"
+          loading="eager"
+          fetchpriority="high"
+        >
+      {%- endif -%}
+      {%- if image == blank and image_mobile == blank -%}
+        {{ 'lifestyle-1' | placeholder_svg_tag: 'sweets-hero__placeholder' }}
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Sweets Hero",
+  "tag": "section",
+  "class": "sweets-hero-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Headline",
+      "default": "NASCH DICH UM DIE WELT."
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Unterzeile",
+      "default": "Entdecke internationale Süßigkeiten, besondere Snacks und deine nächsten Lieblingssorten."
+    },
+    {
+      "type": "header",
+      "content": "Bild"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Bild (Desktop)"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mobile",
+      "label": "Bild (Mobil, optional)",
+      "info": "Wenn leer, wird das Desktop-Bild verwendet."
+    },
+    {
+      "type": "header",
+      "content": "Call-to-Actions"
+    },
+    {
+      "type": "text",
+      "id": "primary_cta_label",
+      "label": "Primärer Button-Text",
+      "default": "Bestseller entdecken"
+    },
+    {
+      "type": "url",
+      "id": "primary_cta_link",
+      "label": "Primärer Button-Link"
+    },
+    {
+      "type": "text",
+      "id": "secondary_cta_label",
+      "label": "Sekundärer Button-Text",
+      "default": "Boxen shoppen"
+    },
+    {
+      "type": "url",
+      "id": "secondary_cta_link",
+      "label": "Sekundärer Button-Link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Sweets Hero"
+    }
+  ]
+}
+{% endschema %}

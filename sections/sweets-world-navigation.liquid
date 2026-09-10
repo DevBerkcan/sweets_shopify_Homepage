@@ -1,0 +1,96 @@
+<!-- sections/sweets-world-navigation.liquid -->
+{%- liquid
+  assign se_stts = section.settings
+-%}
+<section class="sweets-world-nav" data-section-id="{{ section.id }}" data-section-type="sweets-world-navigation">
+  <div class="sweets-container">
+    {%- if se_stts.heading != blank -%}
+      <h2 class="sweets-section-heading">{{ se_stts.heading }}</h2>
+    {%- endif -%}
+    <div class="sweets-world-nav__grid">
+      {%- for block in section.blocks -%}
+        {%- liquid
+          assign coll = block.settings.collection
+          assign tile_image = block.settings.image | default: coll.image
+          assign tile_title = block.settings.title | default: coll.title
+        -%}
+        {%- if coll != blank -%}
+          <a href="{{ coll.url }}" class="sweets-world-nav__tile" {{ block.shopify_attributes }}>
+            <span class="sweets-world-nav__media">
+              {%- if tile_image -%}
+                <img
+                  src="{{ tile_image | image_url: width: 500 }}"
+                  srcset="{{ tile_image | image_url: width: 300 }} 300w, {{ tile_image | image_url: width: 500 }} 500w, {{ tile_image | image_url: width: 700 }} 700w"
+                  sizes="(min-width: 990px) 220px, 33vw"
+                  width="{{ tile_image.width }}"
+                  height="{{ tile_image.height }}"
+                  alt="{{ tile_image.alt | default: tile_title | escape }}"
+                  loading="lazy"
+                >
+              {%- else -%}
+                {{ 'collection-1' | placeholder_svg_tag: 'sweets-world-nav__placeholder' }}
+              {%- endif -%}
+            </span>
+            <span class="sweets-world-nav__title">{{ tile_title }}</span>
+          </a>
+        {%- elsif request.design_mode -%}
+          <span class="sweets-world-nav__tile sweets-world-nav__tile--empty" {{ block.shopify_attributes }}>
+            <span class="sweets-world-nav__media">{{ 'collection-1' | placeholder_svg_tag: 'sweets-world-nav__placeholder' }}</span>
+            <span class="sweets-world-nav__title">Collection im Editor auswählen</span>
+          </span>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Sweets Kategorien",
+  "tag": "section",
+  "class": "sweets-world-nav-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Überschrift",
+      "default": "Wo willst du heute naschen?"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "category_tile",
+      "name": "Kategorie-Kachel",
+      "settings": [
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Collection"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Bild (optional, überschreibt Collection-Bild)"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Titel (optional, überschreibt Collection-Titel)"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 8,
+  "presets": [
+    {
+      "name": "Sweets Kategorien",
+      "blocks": [
+        { "type": "category_tile" },
+        { "type": "category_tile" },
+        { "type": "category_tile" },
+        { "type": "category_tile" }
+      ]
+    }
+  ]
+}
+{% endschema %}
