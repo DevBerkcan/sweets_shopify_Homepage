@@ -104,6 +104,19 @@ endif -%}
          {%- else -%}
             {% render 'product-img', image: image, imgatt: imgatt %}
          {%- endif -%}
+      {%- if product.media[1] != blank -%}
+        <img
+          class="sweets-pr-img--hover"
+          src="{{ product.media[1] | image_url: width: 500 }}"
+          srcset="{{ product.media[1] | image_url: width: 500 }} 500w, {{ product.media[1] | image_url: width: 800 }} 800w"
+          sizes="(min-width: 990px) 25vw, 50vw"
+          width="{{ product.media[1].width }}"
+          height="{{ product.media[1].height }}"
+          alt=""
+          loading="lazy"
+          aria-hidden="true"
+        >
+      {%- endif -%}
       <div data-product-badge data-sort="sale,new,soldout,preOrder,custom" class="t4s-product-badge"></div>
       <div class="t4s-product-btns2">
          {%- if isGrowaveWishlist -%}

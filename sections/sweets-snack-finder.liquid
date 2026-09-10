@@ -1,0 +1,165 @@
+<!-- sections/sweets-snack-finder.liquid -->
+{%- liquid
+  assign se_stts = section.settings
+-%}
+<section id="sweets-snack-finder" class="sweets-snack-finder" data-section-id="{{ section.id }}" data-section-type="sweets-snack-finder">
+  <div class="sweets-container">
+    {%- if se_stts.heading != blank -%}
+      <h2 class="sweets-section-heading">{{ se_stts.heading }}</h2>
+    {%- endif -%}
+
+    {%- assign has_options = false -%}
+    {%- for block in section.blocks -%}
+      {%- if block.settings.collection != blank -%}{%- assign has_options = true -%}{%- endif -%}
+    {%- endfor -%}
+
+    {%- if has_options -%}
+      <div class="sweets-finder__tabs" role="tablist">
+        {%- for block in section.blocks -%}
+          {%- if block.settings.collection != blank -%}
+            <button type="button" class="sweets-finder__tab" data-finder-tab data-target="finder-panel-{{ block.id }}" {{ block.shopify_attributes }}>
+              {{ block.settings.label | default: block.settings.collection.title }}
+            </button>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+
+      {%- for block in section.blocks -%}
+        {%- liquid
+          assign coll = block.settings.collection
+        -%}
+        {%- if coll != blank -%}
+          <div id="finder-panel-{{ block.id }}" class="sweets-finder__panel" data-finder-panel hidden>
+            {%- if block.settings.reason != blank -%}
+              <p class="sweets-finder__reason">{{ block.settings.reason }}</p>
+            {%- endif -%}
+            <div class="sweets-finder__products">
+              {%- for product in coll.products limit: 3 -%}
+                <a href="{{ product.url }}" class="sweets-finder__product">
+                  <span class="sweets-finder__product-media">
+                    {%- if product.featured_image -%}
+                      <img
+                        src="{{ product.featured_image | image_url: width: 300 }}"
+                        width="{{ product.featured_image.width }}"
+                        height="{{ product.featured_image.height }}"
+                        alt="{{ product.featured_image.alt | default: product.title | escape }}"
+                        loading="lazy"
+                      >
+                    {%- else -%}
+                      {{ 'product-1' | placeholder_svg_tag: 'sweets-finder__placeholder' }}
+                    {%- endif -%}
+                  </span>
+                  <span class="sweets-finder__product-title">{{ product.title }}</span>
+                  <span class="sweets-finder__product-price">{{ product.price | money }}</span>
+                </a>
+              {%- else -%}
+                <p class="sweets-finder__empty">Aktuell keine Produkte in dieser Collection.</p>
+              {%- endfor -%}
+            </div>
+            <a href="{{ coll.url }}" class="sweets-btn sweets-btn--primary">Alle ansehen</a>
+            <button type="button" class="sweets-finder__reset" data-finder-reset>Andere Antwort wählen</button>
+          </div>
+        {%- endif -%}
+      {%- endfor -%}
+    {%- else -%}
+      <p class="sweets-finder__fallback">
+        <a href="{{ se_stts.fallback_link | default: '/collections/all' }}" class="sweets-btn sweets-btn--primary">Alle Produkte ansehen</a>
+      </p>
+    {%- endif -%}
+  </div>
+</section>
+
+<script>
+  (function () {
+    var root = document.currentScript.closest('.sweets-snack-finder');
+    if (!root || root.dataset.finderInit === 'true') return;
+    root.dataset.finderInit = 'true';
+
+    var tabs = root.querySelectorAll('[data-finder-tab]');
+    var panels = root.querySelectorAll('[data-finder-panel]');
+
+    function closeAll() {
+      panels.forEach(function (panel) { panel.hidden = true; });
+      tabs.forEach(function (tab) { tab.classList.remove('is--active'); });
+    }
+
+    root.addEventListener('click', function (event) {
+      var tab = event.target.closest('[data-finder-tab]');
+      if (tab) {
+        var targetId = tab.getAttribute('data-target');
+        var isAlreadyOpen = tab.classList.contains('is--active');
+        closeAll();
+        if (!isAlreadyOpen) {
+          var panel = root.querySelector('#' + targetId);
+          if (panel) {
+            panel.hidden = false;
+            tab.classList.add('is--active');
+            panel.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'nearest' });
+          }
+        }
+        return;
+      }
+      if (event.target.closest('[data-finder-reset]')) {
+        closeAll();
+      }
+    });
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Sweets Snack-Finder",
+  "tag": "section",
+  "class": "sweets-snack-finder-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Frage",
+      "default": "Worauf hast du heute Lust?"
+    },
+    {
+      "type": "url",
+      "id": "fallback_link",
+      "label": "Fallback-Link",
+      "info": "Wird gezeigt, falls keine Antwort konfiguriert ist."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "finder_option",
+      "name": "Antwort",
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Antwort-Label",
+          "info": "z. B. \"USA-Style\""
+        },
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Collection"
+        },
+        {
+          "type": "text",
+          "id": "reason",
+          "label": "Kurze Begründung"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 8,
+  "presets": [
+    {
+      "name": "Sweets Snack-Finder",
+      "blocks": [
+        { "type": "finder_option" },
+        { "type": "finder_option" },
+        { "type": "finder_option" },
+        { "type": "finder_option" }
+      ]
+    }
+  ]
+}
+{% endschema %}

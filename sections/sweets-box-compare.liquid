@@ -1,0 +1,143 @@
+<!-- sections/sweets-box-compare.liquid -->
+{%- liquid
+  assign se_stts = section.settings
+-%}
+<section class="sweets-box-compare" data-section-id="{{ section.id }}" data-section-type="sweets-box-compare">
+  <div class="sweets-container">
+    {%- if se_stts.heading != blank -%}
+      <h2 class="sweets-section-heading">{{ se_stts.heading }}</h2>
+    {%- endif -%}
+    {%- if se_stts.text != blank -%}
+      <div class="sweets-box-compare__intro sweets-rte">{{ se_stts.text }}</div>
+    {%- endif -%}
+    <div class="sweets-box-compare__grid">
+      {%- for block in section.blocks -%}
+        {%- liquid
+          assign p = block.settings.product
+          assign variant = p.selected_or_first_available_variant
+          assign on_sale = false
+          if p.compare_at_price > p.price
+            assign on_sale = true
+          endif
+        -%}
+        {%- if p != blank -%}
+          <div class="sweets-box-compare__card" {{ block.shopify_attributes }}>
+            <a href="{{ p.url }}" class="sweets-box-compare__media">
+              {%- if p.featured_image -%}
+                <img
+                  src="{{ p.featured_image | image_url: width: 500 }}"
+                  srcset="{{ p.featured_image | image_url: width: 300 }} 300w, {{ p.featured_image | image_url: width: 500 }} 500w, {{ p.featured_image | image_url: width: 700 }} 700w"
+                  sizes="(min-width: 990px) 33vw, 100vw"
+                  width="{{ p.featured_image.width }}"
+                  height="{{ p.featured_image.height }}"
+                  alt="{{ p.featured_image.alt | default: p.title | escape }}"
+                  loading="lazy"
+                >
+              {%- else -%}
+                {{ 'product-1' | placeholder_svg_tag: 'sweets-box-compare__placeholder' }}
+              {%- endif -%}
+            </a>
+            <div class="sweets-box-compare__body">
+              {%- if block.settings.theme_label != blank -%}
+                <span class="sweets-box-compare__label">{{ block.settings.theme_label }}</span>
+              {%- endif -%}
+              <h3 class="sweets-box-compare__title"><a href="{{ p.url }}">{{ p.title }}</a></h3>
+              <div class="sweets-box-compare__price">
+                {%- if on_sale -%}
+                  <del>{{ p.compare_at_price | money }}</del>
+                  <ins>{{ p.price | money }}</ins>
+                {%- else -%}
+                  {{ p.price | money }}
+                {%- endif -%}
+              </div>
+              <ul class="sweets-box-compare__facts">
+                {%- if block.settings.content_type != blank -%}
+                  <li>
+                    <span class="sweets-box-compare__fact-label">Inhalt</span>
+                    <span>{%- if block.settings.content_type == 'fixed' -%}Fester Inhalt{%- else -%}Wechselnder Inhalt{%- endif -%}</span>
+                  </li>
+                {%- endif -%}
+                {%- if variant.weight > 0 -%}
+                  <li>
+                    <span class="sweets-box-compare__fact-label">Gewicht</span>
+                    <span>{{ variant.weight | weight_with_unit: variant.weight_unit }}</span>
+                  </li>
+                {%- endif -%}
+                <li>
+                  <span class="sweets-box-compare__fact-label">Verfügbarkeit</span>
+                  <span>{%- if p.available -%}Verfügbar{%- else -%}Ausverkauft{%- endif -%}</span>
+                </li>
+              </ul>
+              <a href="{{ p.url }}" class="sweets-btn sweets-btn--secondary">Ansehen</a>
+            </div>
+          </div>
+        {%- elsif request.design_mode -%}
+          <div class="sweets-box-compare__card sweets-box-compare__card--empty" {{ block.shopify_attributes }}>
+            <span class="sweets-box-compare__placeholder-text">Produkt im Editor auswählen</span>
+          </div>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Sweets Boxen-Vergleich",
+  "tag": "section",
+  "class": "sweets-box-compare-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Überschrift",
+      "default": "Welche Box passt zu dir?"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Einleitungstext"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "compared_box",
+      "name": "Box",
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Produkt"
+        },
+        {
+          "type": "text",
+          "id": "theme_label",
+          "label": "Herkunft / Thema",
+          "info": "z. B. \"USA\", \"Asia\", \"Vegan\""
+        },
+        {
+          "type": "select",
+          "id": "content_type",
+          "label": "Inhalt",
+          "options": [
+            { "value": "fixed", "label": "Fester Inhalt" },
+            { "value": "rotating", "label": "Wechselnder Inhalt" }
+          ],
+          "default": "fixed"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 3,
+  "presets": [
+    {
+      "name": "Sweets Boxen-Vergleich",
+      "blocks": [
+        { "type": "compared_box" },
+        { "type": "compared_box" },
+        { "type": "compared_box" }
+      ]
+    }
+  ]
+}
+{% endschema %}

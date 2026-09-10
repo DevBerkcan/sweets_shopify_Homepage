@@ -396,3 +396,284 @@
   color: var(--sweets-color-orange);
   font-weight: 700;
 }
+
+/* ---------- Sticky-ATC (Bestand): additive Optik ---------- */
+.t4s-sticky-atc {
+  font-family: var(--sweets-font-body);
+}
+
+.t4s-sticky-atc__title {
+  color: var(--sweets-color-brown);
+  font-weight: 700;
+}
+
+.t4s-sticky-atc__price ins {
+  color: var(--sweets-color-orange);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.t4s-sticky-atc__atc {
+  border-radius: var(--sweets-radius-sm);
+  background-color: var(--sweets-color-orange);
+}
+
+/* ---------- Produktkarte: Hover-Zweitbild ---------- */
+.sweets-pr-img--hover {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.25s var(--sweets-ease);
+  pointer-events: none;
+}
+
+.t4s-product-inner:hover .sweets-pr-img--hover {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sweets-pr-img--hover {
+    transition: none;
+  }
+}
+
+/* ---------- Boxen-Vergleich ---------- */
+.sweets-box-compare {
+  padding-block: var(--sweets-space-lg);
+  background-color: var(--sweets-color-white);
+}
+
+.sweets-box-compare__intro {
+  text-align: center;
+  max-width: 60ch;
+  margin: 0 auto var(--sweets-space-md);
+  color: var(--sweets-color-brown);
+}
+
+.sweets-box-compare__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--sweets-space-md);
+}
+
+@media (min-width: 700px) {
+  .sweets-box-compare__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.sweets-box-compare__card {
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--sweets-radius-md);
+  overflow: hidden;
+  background-color: var(--sweets-color-cream);
+}
+
+.sweets-box-compare__card--empty {
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  color: var(--sweets-color-brown);
+  opacity: 0.6;
+  text-align: center;
+  padding: var(--sweets-space-md);
+}
+
+.sweets-box-compare__media {
+  display: block;
+  aspect-ratio: 1 / 1;
+}
+
+.sweets-box-compare__media img,
+.sweets-box-compare__placeholder {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.sweets-box-compare__body {
+  padding: var(--sweets-space-sm);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sweets-space-2xs);
+}
+
+.sweets-box-compare__label {
+  align-self: flex-start;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--sweets-color-white);
+  background-color: var(--sweets-color-blue);
+  border-radius: var(--sweets-radius-sm);
+  padding: 4px 10px;
+}
+
+.sweets-box-compare__title {
+  font-family: var(--sweets-font-heading);
+  font-size: 18px;
+  margin: 0;
+}
+
+.sweets-box-compare__title a {
+  color: var(--sweets-color-brown);
+  text-decoration: none;
+}
+
+.sweets-box-compare__price {
+  font-weight: 700;
+  color: var(--sweets-color-orange);
+}
+
+.sweets-box-compare__price del {
+  color: var(--sweets-color-brown);
+  opacity: 0.6;
+  margin-right: 6px;
+}
+
+.sweets-box-compare__facts {
+  list-style: none;
+  margin: 0;
+  padding: var(--sweets-space-2xs) 0;
+  border-top: 1px solid rgba(114, 58, 43, 0.15);
+  border-bottom: 1px solid rgba(114, 58, 43, 0.15);
+  font-size: 14px;
+  color: var(--sweets-color-brown);
+}
+
+.sweets-box-compare__facts li {
+  display: flex;
+  justify-content: space-between;
+  padding: 4px 0;
+}
+
+.sweets-box-compare__fact-label {
+  opacity: 0.65;
+}
+
+.sweets-box-compare__body .sweets-btn {
+  align-self: flex-start;
+  margin-top: var(--sweets-space-2xs);
+}
+
+/* ---------- Snack-Finder ---------- */
+.sweets-snack-finder {
+  padding-block: var(--sweets-space-lg);
+  background-color: var(--sweets-color-cream);
+}
+
+.sweets-finder__tabs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--sweets-space-2xs);
+  margin-bottom: var(--sweets-space-md);
+}
+
+.sweets-finder__tab {
+  font-family: var(--sweets-font-body);
+  font-weight: 700;
+  font-size: 15px;
+  padding: 10px 20px;
+  border-radius: var(--sweets-radius-sm);
+  border: 2px solid var(--sweets-color-brown);
+  background-color: transparent;
+  color: var(--sweets-color-brown);
+  cursor: pointer;
+  transition: background-color 0.2s var(--sweets-ease), color 0.2s var(--sweets-ease);
+}
+
+.sweets-finder__tab:hover,
+.sweets-finder__tab.is--active {
+  background-color: var(--sweets-color-brown);
+  color: var(--sweets-color-white);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sweets-finder__tab {
+    transition: none;
+  }
+}
+
+.sweets-finder__panel {
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.sweets-finder__reason {
+  font-family: var(--sweets-font-body);
+  color: var(--sweets-color-brown);
+  font-size: 16px;
+  margin-bottom: var(--sweets-space-md);
+}
+
+.sweets-finder__products {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sweets-space-sm);
+  margin-bottom: var(--sweets-space-md);
+  text-align: left;
+}
+
+@media (max-width: 699px) {
+  .sweets-finder__products {
+    grid-template-columns: 1fr;
+  }
+}
+
+.sweets-finder__product {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sweets-space-2xs);
+  text-decoration: none;
+  color: var(--sweets-color-brown);
+}
+
+.sweets-finder__product-media {
+  display: block;
+  aspect-ratio: 1 / 1;
+  border-radius: var(--sweets-radius-sm);
+  overflow: hidden;
+  background-color: var(--sweets-color-white);
+}
+
+.sweets-finder__product-media img,
+.sweets-finder__placeholder {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.sweets-finder__product-title {
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.sweets-finder__product-price {
+  color: var(--sweets-color-orange);
+  font-weight: 700;
+}
+
+.sweets-finder__reset {
+  display: block;
+  margin: var(--sweets-space-sm) auto 0;
+  background: none;
+  border: none;
+  text-decoration: underline;
+  color: var(--sweets-color-brown);
+  cursor: pointer;
+  font-family: var(--sweets-font-body);
+  font-size: 14px;
+}
+
+.sweets-finder__fallback {
+  text-align: center;
+}
