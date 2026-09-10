@@ -1,0 +1,121 @@
+<!-- sections/sweets-category-navigator.liquid -->
+{%- liquid
+  assign se_stts = section.settings
+  assign format_blocks = section.blocks | where: 'type', 'format_option'
+  assign origin_blocks = section.blocks | where: 'type', 'origin_option'
+-%}
+<section class="sweets-category-nav" data-section-id="{{ section.id }}" data-section-type="sweets-category-navigator">
+  <div class="sweets-container">
+    {%- if se_stts.heading != blank -%}
+      <h2 class="sweets-section-heading">{{ se_stts.heading }}</h2>
+    {%- endif -%}
+    {%- if se_stts.subheading != blank -%}
+      <p class="sweets-category-nav__intro">{{ se_stts.subheading }}</p>
+    {%- endif -%}
+
+    <div class="sweets-category-nav__step">
+      <div class="sweets-category-nav__step-label">1 · Nach Format</div>
+      <div class="sweets-category-nav__grid sweets-category-nav__grid--format">
+        {%- for block in format_blocks -%}
+          {%- assign coll = block.settings.collection -%}
+          {%- if coll != blank -%}
+            <a href="{{ coll.url }}" class="sweets-category-nav__tile" {{ block.shopify_attributes }}>
+              <span class="sweets-category-nav__tile-title">{{ block.settings.label | default: coll.title }}</span>
+              {%- if block.settings.description != blank -%}
+                <span class="sweets-category-nav__tile-desc">{{ block.settings.description }}</span>
+              {%- endif -%}
+            </a>
+          {%- elsif request.design_mode -%}
+            <span class="sweets-category-nav__tile sweets-category-nav__tile--empty" {{ block.shopify_attributes }}>Collection im Editor auswählen</span>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+    </div>
+
+    <div class="sweets-category-nav__step">
+      <div class="sweets-category-nav__step-label">2 · Nach Herkunft</div>
+      <div class="sweets-category-nav__grid sweets-category-nav__grid--origin">
+        {%- for block in origin_blocks -%}
+          {%- assign coll = block.settings.collection -%}
+          {%- if coll != blank -%}
+            <a href="{{ coll.url }}" class="sweets-category-nav__tile sweets-category-nav__tile--origin" {{ block.shopify_attributes }}>
+              <span class="sweets-category-nav__tile-media">
+                {%- if coll.image -%}
+                  <img
+                    src="{{ coll.image | image_url: width: 400 }}"
+                    width="{{ coll.image.width }}"
+                    height="{{ coll.image.height }}"
+                    alt="{{ coll.image.alt | default: coll.title | escape }}"
+                    loading="lazy"
+                  >
+                {%- else -%}
+                  {{ 'collection-1' | placeholder_svg_tag: 'sweets-category-nav__placeholder' }}
+                {%- endif -%}
+              </span>
+              <span class="sweets-category-nav__tile-title">{{ block.settings.label | default: coll.title }}</span>
+              {%- if block.settings.description != blank -%}
+                <span class="sweets-category-nav__tile-desc">{{ block.settings.description }}</span>
+              {%- endif -%}
+            </a>
+          {%- elsif request.design_mode -%}
+            <span class="sweets-category-nav__tile sweets-category-nav__tile--empty" {{ block.shopify_attributes }}>Collection im Editor auswählen</span>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Sweets Kategorien-Navigator",
+  "tag": "section",
+  "class": "sweets-category-navigator-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Überschrift",
+      "default": "Wo willst du heute naschen?"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Untertext",
+      "default": "Erst das Format wählen, dann die Herkunft – so findest du in zwei Schritten das Richtige."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "format_option",
+      "name": "Format-Kachel",
+      "settings": [
+        { "type": "collection", "id": "collection", "label": "Collection" },
+        { "type": "text", "id": "label", "label": "Titel (optional, überschreibt Collection-Titel)" },
+        { "type": "text", "id": "description", "label": "Kurzbeschreibung" }
+      ]
+    },
+    {
+      "type": "origin_option",
+      "name": "Herkunfts-Kachel",
+      "settings": [
+        { "type": "collection", "id": "collection", "label": "Collection" },
+        { "type": "text", "id": "label", "label": "Titel (optional, überschreibt Collection-Titel)" },
+        { "type": "text", "id": "description", "label": "Kurzbeschreibung" }
+      ]
+    }
+  ],
+  "max_blocks": 10,
+  "presets": [
+    {
+      "name": "Sweets Kategorien-Navigator",
+      "blocks": [
+        { "type": "format_option" },
+        { "type": "format_option" },
+        { "type": "origin_option" },
+        { "type": "origin_option" }
+      ]
+    }
+  ]
+}
+{% endschema %}

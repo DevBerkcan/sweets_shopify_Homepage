@@ -51,12 +51,10 @@
                 {%- endif -%}
               </div>
               <ul class="sweets-box-compare__facts">
-                {%- if block.settings.content_type != blank -%}
-                  <li>
-                    <span class="sweets-box-compare__fact-label">Inhalt</span>
-                    <span>{%- if block.settings.content_type == 'fixed' -%}Fester Inhalt{%- else -%}Wechselnder Inhalt{%- endif -%}</span>
-                  </li>
-                {%- endif -%}
+                <li>
+                  <span class="sweets-box-compare__fact-label">Inhalt</span>
+                  <span>{%- case block.settings.content_type -%}{%- when 'fixed' -%}Fester Inhalt{%- when 'rotating' -%}Wechselnder Inhalt{%- else -%}Nicht dokumentiert{%- endcase -%}</span>
+                </li>
                 {%- if variant.weight > 0 -%}
                   <li>
                     <span class="sweets-box-compare__fact-label">Gewicht</span>
@@ -119,11 +117,13 @@
           "type": "select",
           "id": "content_type",
           "label": "Inhalt",
+          "info": "Nur wählen, wenn wirklich bekannt – sonst \"Nicht dokumentiert\" belassen.",
           "options": [
+            { "value": "undocumented", "label": "Nicht dokumentiert" },
             { "value": "fixed", "label": "Fester Inhalt" },
             { "value": "rotating", "label": "Wechselnder Inhalt" }
           ],
-          "default": "fixed"
+          "default": "undocumented"
         }
       ]
     }

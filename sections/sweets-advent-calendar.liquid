@@ -1,0 +1,126 @@
+<!-- sections/sweets-advent-calendar.liquid -->
+{%- liquid
+  assign se_stts = section.settings
+  assign has_products = false
+  for block in section.blocks
+    if block.settings.product != blank
+      assign has_products = true
+    endif
+  endfor
+-%}
+{%- if has_products or request.design_mode -%}
+<section class="sweets-advent-calendar" data-section-id="{{ section.id }}" data-section-type="sweets-advent-calendar">
+  <div class="sweets-container">
+    <div class="sweets-advent-calendar__head">
+      <div>
+        {%- if se_stts.heading != blank -%}
+          <h2 class="sweets-section-heading" style="text-align:left;margin-bottom:4px">{{ se_stts.heading }}</h2>
+        {%- endif -%}
+        {%- if se_stts.text != blank -%}
+          <p class="sweets-advent-calendar__intro">{{ se_stts.text }}</p>
+        {%- endif -%}
+      </div>
+      {%- if se_stts.all_link != blank -%}
+        <a href="{{ se_stts.all_link }}" class="sweets-advent-calendar__all-link">Alle Kalender</a>
+      {%- endif -%}
+    </div>
+
+    <div class="sweets-advent-calendar__grid">
+      {%- for block in section.blocks -%}
+        {%- liquid
+          assign p = block.settings.product
+          assign on_sale = false
+          if p.compare_at_price > p.price
+            assign on_sale = true
+          endif
+        -%}
+        {%- if p != blank -%}
+          <div class="sweets-advent-calendar__card" {{ block.shopify_attributes }}>
+            <a href="{{ p.url }}" class="sweets-advent-calendar__media">
+              {%- if p.featured_image -%}
+                <img
+                  src="{{ p.featured_image | image_url: width: 500 }}"
+                  srcset="{{ p.featured_image | image_url: width: 400 }} 400w, {{ p.featured_image | image_url: width: 600 }} 600w"
+                  sizes="(min-width: 990px) 33vw, 100vw"
+                  width="{{ p.featured_image.width }}"
+                  height="{{ p.featured_image.height }}"
+                  alt="{{ p.featured_image.alt | default: p.title | escape }}"
+                  loading="lazy"
+                >
+              {%- else -%}
+                {{ 'product-1' | placeholder_svg_tag: 'sweets-advent-calendar__placeholder' }}
+              {%- endif -%}
+            </a>
+            <div class="sweets-advent-calendar__body">
+              <h3 class="sweets-advent-calendar__title"><a href="{{ p.url }}">{{ p.title }}</a></h3>
+              <div class="sweets-advent-calendar__price">
+                {%- if on_sale -%}
+                  <del>{{ p.compare_at_price | money }}</del>
+                  <ins>{{ p.price | money }}</ins>
+                {%- else -%}
+                  {{ p.price | money }}
+                {%- endif -%}
+              </div>
+              {%- if p.available -%}
+                <a href="{{ p.url }}" class="sweets-btn sweets-btn--primary">Ansehen</a>
+              {%- else -%}
+                <span class="sweets-advent-calendar__soldout">Ausverkauft</span>
+              {%- endif -%}
+            </div>
+          </div>
+        {%- elsif request.design_mode -%}
+          <div class="sweets-advent-calendar__card sweets-advent-calendar__card--empty" {{ block.shopify_attributes }}>
+            <span>Produkt im Editor auswählen</span>
+          </div>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Sweets Adventskalender",
+  "tag": "section",
+  "class": "sweets-advent-calendar-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Überschrift",
+      "default": "24 Türchen statt einer Box"
+    },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Text"
+    },
+    {
+      "type": "url",
+      "id": "all_link",
+      "label": "\"Alle Kalender\"-Link (optional)"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "calendar_item",
+      "name": "Kalender",
+      "settings": [
+        { "type": "product", "id": "product", "label": "Produkt" }
+      ]
+    }
+  ],
+  "max_blocks": 3,
+  "presets": [
+    {
+      "name": "Sweets Adventskalender",
+      "blocks": [
+        { "type": "calendar_item" },
+        { "type": "calendar_item" },
+        { "type": "calendar_item" }
+      ]
+    }
+  ]
+}
+{% endschema %}
