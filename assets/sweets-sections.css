@@ -175,6 +175,60 @@
   }
 }
 
+/* ---------- Hero: Collage-Modus ---------- */
+.sweets-hero__media--collage {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  grid-template-rows: auto auto;
+  gap: var(--sweets-space-2xs);
+  aspect-ratio: auto;
+}
+
+.sweets-hero__collage-item {
+  border-radius: var(--sweets-radius-md);
+  overflow: hidden;
+  background-color: var(--sweets-color-white);
+  box-shadow: 0 20px 40px -22px rgba(23, 23, 23, 0.35);
+}
+
+.sweets-hero__collage-item--main {
+  grid-row: span 2;
+}
+
+.sweets-hero__collage-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  aspect-ratio: 1 / 1;
+}
+
+.sweets-hero__collage-item--main img {
+  aspect-ratio: 3 / 4;
+}
+
+.sweets-hero__collage-tag {
+  position: absolute;
+  left: -6px;
+  bottom: -10px;
+  background-color: var(--sweets-color-brown);
+  color: var(--sweets-color-cream);
+  font-family: var(--sweets-font-heading);
+  font-weight: 600;
+  font-size: 13px;
+  padding: 10px 16px;
+  border-radius: var(--sweets-radius-lg);
+  transform: rotate(-3deg);
+  box-shadow: 0 10px 24px -12px rgba(23, 23, 23, 0.5);
+}
+
+@media (min-width: 990px) {
+  .sweets-hero__media--collage {
+    flex: 1;
+  }
+}
+
 /* ---------- Kategorien entdecken ---------- */
 .sweets-world-nav {
   padding-block: var(--sweets-space-lg);

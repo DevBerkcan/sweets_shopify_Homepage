@@ -9,8 +9,8 @@
   --sweets-color-dark: #171717;
   --sweets-color-white: #ffffff;
 
-  --sweets-font-heading: var(--font-family-1, "Fira Sans", sans-serif);
-  --sweets-font-body: var(--font-family-3, "Raleway", sans-serif);
+  --sweets-font-heading: "Fredoka", var(--font-family-1, sans-serif);
+  --sweets-font-body: "Manrope", var(--font-family-3, sans-serif);
 
   --sweets-space-2xs: 8px;
   --sweets-space-xs: 12px;

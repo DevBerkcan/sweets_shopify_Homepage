@@ -3,8 +3,14 @@
   assign se_stts = section.settings
   assign image = se_stts.image
   assign image_mobile = se_stts.image_mobile | default: image
+  assign image_2 = se_stts.image_secondary_1
+  assign image_3 = se_stts.image_secondary_2
+  assign is_collage = false
+  if image_2 != blank or image_3 != blank
+    assign is_collage = true
+  endif
 -%}
-<section class="sweets-hero" data-section-id="{{ section.id }}" data-section-type="sweets-hero">
+<section class="sweets-hero{% if is_collage %} sweets-hero--collage{% endif %}" data-section-id="{{ section.id }}" data-section-type="sweets-hero">
   <div class="sweets-container sweets-hero__inner">
     <div class="sweets-hero__content">
       {%- if se_stts.heading != blank -%}
@@ -24,37 +30,86 @@
         </div>
       {%- endif -%}
     </div>
-    <div class="sweets-hero__media">
-      {%- if image -%}
-        <img
-          class="sweets-hero__image sweets-hero__image--desktop"
-          srcset="{{ image | image_url: width: 600 }} 600w, {{ image | image_url: width: 900 }} 900w, {{ image | image_url: width: 1200 }} 1200w, {{ image | image_url: width: 1600 }} 1600w"
-          sizes="(min-width: 990px) 50vw, 100vw"
-          src="{{ image | image_url: width: 900 }}"
-          width="{{ image.width }}"
-          height="{{ image.height }}"
-          alt="{{ image.alt | escape }}"
-          loading="eager"
-          fetchpriority="high"
-        >
-      {%- endif -%}
-      {%- if image_mobile -%}
-        <img
-          class="sweets-hero__image sweets-hero__image--mobile"
-          srcset="{{ image_mobile | image_url: width: 600 }} 600w, {{ image_mobile | image_url: width: 900 }} 900w"
-          sizes="100vw"
-          src="{{ image_mobile | image_url: width: 700 }}"
-          width="{{ image_mobile.width }}"
-          height="{{ image_mobile.height }}"
-          alt="{{ image_mobile.alt | escape }}"
-          loading="eager"
-          fetchpriority="high"
-        >
-      {%- endif -%}
-      {%- if image == blank and image_mobile == blank -%}
-        {{ 'lifestyle-1' | placeholder_svg_tag: 'sweets-hero__placeholder' }}
-      {%- endif -%}
-    </div>
+
+    {%- if is_collage -%}
+      <div class="sweets-hero__media sweets-hero__media--collage">
+        {%- if image -%}
+          <div class="sweets-hero__collage-item sweets-hero__collage-item--main">
+            <img
+              srcset="{{ image | image_url: width: 600 }} 600w, {{ image | image_url: width: 900 }} 900w, {{ image | image_url: width: 1200 }} 1200w"
+              sizes="(min-width: 990px) 30vw, 60vw"
+              src="{{ image | image_url: width: 900 }}"
+              width="{{ image.width }}"
+              height="{{ image.height }}"
+              alt="{{ image.alt | escape }}"
+              loading="eager"
+              fetchpriority="high"
+            >
+          </div>
+        {%- endif -%}
+        {%- if image_2 -%}
+          <div class="sweets-hero__collage-item">
+            <img
+              srcset="{{ image_2 | image_url: width: 500 }} 500w, {{ image_2 | image_url: width: 700 }} 700w"
+              sizes="(min-width: 990px) 20vw, 40vw"
+              src="{{ image_2 | image_url: width: 600 }}"
+              width="{{ image_2.width }}"
+              height="{{ image_2.height }}"
+              alt="{{ image_2.alt | escape }}"
+              loading="eager"
+            >
+          </div>
+        {%- endif -%}
+        {%- if image_3 -%}
+          <div class="sweets-hero__collage-item">
+            <img
+              srcset="{{ image_3 | image_url: width: 500 }} 500w, {{ image_3 | image_url: width: 700 }} 700w"
+              sizes="(min-width: 990px) 20vw, 40vw"
+              src="{{ image_3 | image_url: width: 600 }}"
+              width="{{ image_3.width }}"
+              height="{{ image_3.height }}"
+              alt="{{ image_3.alt | escape }}"
+              loading="eager"
+            >
+          </div>
+        {%- endif -%}
+        {%- if se_stts.collage_tag != blank -%}
+          <div class="sweets-hero__collage-tag">{{ se_stts.collage_tag }}</div>
+        {%- endif -%}
+      </div>
+    {%- else -%}
+      <div class="sweets-hero__media">
+        {%- if image -%}
+          <img
+            class="sweets-hero__image sweets-hero__image--desktop"
+            srcset="{{ image | image_url: width: 600 }} 600w, {{ image | image_url: width: 900 }} 900w, {{ image | image_url: width: 1200 }} 1200w, {{ image | image_url: width: 1600 }} 1600w"
+            sizes="(min-width: 990px) 50vw, 100vw"
+            src="{{ image | image_url: width: 900 }}"
+            width="{{ image.width }}"
+            height="{{ image.height }}"
+            alt="{{ image.alt | escape }}"
+            loading="eager"
+            fetchpriority="high"
+          >
+        {%- endif -%}
+        {%- if image_mobile -%}
+          <img
+            class="sweets-hero__image sweets-hero__image--mobile"
+            srcset="{{ image_mobile | image_url: width: 600 }} 600w, {{ image_mobile | image_url: width: 900 }} 900w"
+            sizes="100vw"
+            src="{{ image_mobile | image_url: width: 700 }}"
+            width="{{ image_mobile.width }}"
+            height="{{ image_mobile.height }}"
+            alt="{{ image_mobile.alt | escape }}"
+            loading="eager"
+            fetchpriority="high"
+          >
+        {%- endif -%}
+        {%- if image == blank and image_mobile == blank -%}
+          {{ 'lifestyle-1' | placeholder_svg_tag: 'sweets-hero__placeholder' }}
+        {%- endif -%}
+      </div>
+    {%- endif -%}
   </div>
 </section>
 
@@ -83,13 +138,30 @@
     {
       "type": "image_picker",
       "id": "image",
-      "label": "Bild (Desktop)"
+      "label": "Hauptbild"
     },
     {
       "type": "image_picker",
       "id": "image_mobile",
-      "label": "Bild (Mobil, optional)",
-      "info": "Wenn leer, wird das Desktop-Bild verwendet."
+      "label": "Bild (Mobil, nur bei Einzelbild-Modus)",
+      "info": "Wenn leer, wird das Hauptbild verwendet. Wird ignoriert, sobald ein Collage-Nebenbild gesetzt ist."
+    },
+    {
+      "type": "image_picker",
+      "id": "image_secondary_1",
+      "label": "Collage-Nebenbild 1 (optional)",
+      "info": "Sobald hier oder bei Nebenbild 2 ein Bild gesetzt ist, wechselt die Section in den Collage-Modus (Hauptbild groß + Nebenbilder gestapelt)."
+    },
+    {
+      "type": "image_picker",
+      "id": "image_secondary_2",
+      "label": "Collage-Nebenbild 2 (optional)"
+    },
+    {
+      "type": "text",
+      "id": "collage_tag",
+      "label": "Sticker-Text auf der Collage (optional)",
+      "info": "Nur im Collage-Modus sichtbar."
     },
     {
       "type": "header",
