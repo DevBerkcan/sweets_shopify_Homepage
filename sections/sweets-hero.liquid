@@ -10,7 +10,40 @@
     assign is_collage = true
   endif
 -%}
-<section class="sweets-hero{% if is_collage %} sweets-hero--collage{% endif %}" data-section-id="{{ section.id }}" data-section-type="sweets-hero">
+<section class="sweets-hero{% if is_collage %} sweets-hero--collage{% else %} sweets-hero--bg{% endif %}" data-section-id="{{ section.id }}" data-section-type="sweets-hero">
+  {%- unless is_collage -%}
+    {%- if image or image_mobile -%}
+      <div class="sweets-hero__bg" aria-hidden="true">
+        {%- if image -%}
+          <img
+            class="sweets-hero__bg-image sweets-hero__bg-image--desktop"
+            srcset="{{ image | image_url: width: 1200 }} 1200w, {{ image | image_url: width: 1600 }} 1600w, {{ image | image_url: width: 2000 }} 2000w"
+            sizes="100vw"
+            src="{{ image | image_url: width: 1600 }}"
+            width="{{ image.width }}"
+            height="{{ image.height }}"
+            alt="{{ image.alt | escape }}"
+            loading="eager"
+            fetchpriority="high"
+          >
+        {%- endif -%}
+        {%- if image_mobile -%}
+          <img
+            class="sweets-hero__bg-image sweets-hero__bg-image--mobile"
+            srcset="{{ image_mobile | image_url: width: 700 }} 700w, {{ image_mobile | image_url: width: 1000 }} 1000w"
+            sizes="100vw"
+            src="{{ image_mobile | image_url: width: 900 }}"
+            width="{{ image_mobile.width }}"
+            height="{{ image_mobile.height }}"
+            alt="{{ image_mobile.alt | escape }}"
+            loading="eager"
+            fetchpriority="high"
+          >
+        {%- endif -%}
+        <div class="sweets-hero__scrim"></div>
+      </div>
+    {%- endif -%}
+  {%- endunless -%}
   <div class="sweets-container sweets-hero__inner">
     <div class="sweets-hero__content">
       {%- if se_stts.heading != blank -%}
@@ -75,38 +108,6 @@
         {%- endif -%}
         {%- if se_stts.collage_tag != blank -%}
           <div class="sweets-hero__collage-tag">{{ se_stts.collage_tag }}</div>
-        {%- endif -%}
-      </div>
-    {%- else -%}
-      <div class="sweets-hero__media">
-        {%- if image -%}
-          <img
-            class="sweets-hero__image sweets-hero__image--desktop"
-            srcset="{{ image | image_url: width: 600 }} 600w, {{ image | image_url: width: 900 }} 900w, {{ image | image_url: width: 1200 }} 1200w, {{ image | image_url: width: 1600 }} 1600w"
-            sizes="(min-width: 990px) 50vw, 100vw"
-            src="{{ image | image_url: width: 900 }}"
-            width="{{ image.width }}"
-            height="{{ image.height }}"
-            alt="{{ image.alt | escape }}"
-            loading="eager"
-            fetchpriority="high"
-          >
-        {%- endif -%}
-        {%- if image_mobile -%}
-          <img
-            class="sweets-hero__image sweets-hero__image--mobile"
-            srcset="{{ image_mobile | image_url: width: 600 }} 600w, {{ image_mobile | image_url: width: 900 }} 900w"
-            sizes="100vw"
-            src="{{ image_mobile | image_url: width: 700 }}"
-            width="{{ image_mobile.width }}"
-            height="{{ image_mobile.height }}"
-            alt="{{ image_mobile.alt | escape }}"
-            loading="eager"
-            fetchpriority="high"
-          >
-        {%- endif -%}
-        {%- if image == blank and image_mobile == blank -%}
-          {{ 'lifestyle-1' | placeholder_svg_tag: 'sweets-hero__placeholder' }}
         {%- endif -%}
       </div>
     {%- endif -%}
