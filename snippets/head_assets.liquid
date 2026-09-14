@@ -31,12 +31,12 @@
     {%- unless font_1.system? -%}
       <link rel="preload" as="font" href="{{ font_1 | font_url }}" type="font/woff2" crossorigin>
     {%- endunless -%}
-    {%- unless font_2.system? -%}
-      <link rel="preload" as="font" href="{{ font_1 | font_url }}" type="font/woff2" crossorigin>
-    {%- endunless -%}
-    {%- unless font_3.system? -%}
-      <link rel="preload" as="font" href="{{ font_1 | font_url }}" type="font/woff2" crossorigin>
-    {%- endunless -%}
+    {%- if font_2.system? == false and font_2 != font_1 -%}
+      <link rel="preload" as="font" href="{{ font_2 | font_url }}" type="font/woff2" crossorigin>
+    {%- endif -%}
+    {%- if font_3.system? == false and font_3 != font_1 and font_3 != font_2 -%}
+      <link rel="preload" as="font" href="{{ font_3 | font_url }}" type="font/woff2" crossorigin>
+    {%- endif -%}
   {%- endif -%}
 
   {{- 'base.css' | asset_url | stylesheet_tag: preload: true -}}
@@ -47,6 +47,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
   {{- 'sweets-design-system.css' | asset_url | stylesheet_tag: preload: true -}}
   {{- 'sweets-sections.css' | asset_url | stylesheet_tag: preload: true -}}
+  {{- 'sweets-refinements.css' | asset_url | stylesheet_tag -}}
 
   {%- style -%}
 

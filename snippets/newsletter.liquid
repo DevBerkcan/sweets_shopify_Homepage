@@ -151,11 +151,11 @@
             <path d="M11.9998 12.8724C11.1598 12.8724 10.3098 12.6124 9.65978 12.0824L6.52978 9.58241C6.20978 9.32241 6.14978 8.85241 6.40978 8.53241C6.66978 8.21241 7.13978 8.15241 7.45978 8.41241L10.5898 10.9124C11.3498 11.5224 12.6398 11.5224 13.3998 10.9124L16.5298 8.41241C16.8498 8.15241 17.3298 8.20241 17.5798 8.53241C17.8398 8.85241 17.7898 9.33241 17.4598 9.58241L14.3298 12.0824C13.6898 12.6124 12.8398 12.8724 11.9998 12.8724Z" fill="currentColor"/>
             </svg>
           {% endif %}
-          <div class="{{ class_email }} t4s-col-item is--col-email"><input type="email" name="contact[email]" placeholder="{{ 'sections.newsletter_form.email_placeholder' | t }}"  value="{% if customer %}{{ customer.email }}{% endif %}" class="{{ class_ip }} t4s-newsletter__email" required="required"></div>
+          <div class="{{ class_email }} t4s-col-item is--col-email"><input type="email" name="contact[email]" autocomplete="email" aria-label="{{ 'sections.newsletter_form.email_placeholder' | t | escape }}" placeholder="{{ 'sections.newsletter_form.email_placeholder' | t }}"  value="{% if customer %}{{ customer.email }}{% endif %}" class="{{ class_ip }} t4s-newsletter__email" required="required"></div>
           <div class="t4s-newsletter__fields">
             <div class="{{ class_btn }} t4s-col-item is--col-btn" style="padding: 0px">
               <button data-coupon="{{ bk_stts_code | base64_encode }}" data-agreeMail-btn type="submit" class="t4s-w-100 t4s-newsletter__submit t4s-truncate t4s-btn-loading__svg">
-                <span class="t4s-newsletter__text">{{bk_label_button | default: "Subscribe"}}{{ btn_icon }}{{ icon_Html }}</span>
+                <span class="t4s-newsletter__text">{% if bk_label_button != blank %}{{ bk_label_button }}{% else %}{{ 'general.newsletter_popup.submit' | t }}{% endif %}{{ btn_icon }}{{ icon_Html }}</span>
                 <span class="t4s-loading__spinner t4s-dn">
                   <svg width="16" height="16" aria-hidden="true" focusable="false" role="presentation" class="t4s-svg__spinner" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg"><circle class="t4s-path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle></svg>
                 </span>

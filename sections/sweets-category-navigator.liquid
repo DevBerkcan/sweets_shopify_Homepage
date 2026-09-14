@@ -54,12 +54,13 @@
           {%- if coll != blank -%}
             <a href="{{ coll.url }}" class="sweets-category-nav__tile sweets-category-nav__tile--origin" {{ block.shopify_attributes }}>
               <span class="sweets-category-nav__tile-media">
-                {%- if coll.image -%}
+                {%- assign category_image = coll.image | default: coll.products.first.featured_image -%}
+                {%- if category_image -%}
                   <img
-                    src="{{ coll.image | image_url: width: 400 }}"
-                    width="{{ coll.image.width }}"
-                    height="{{ coll.image.height }}"
-                    alt="{{ coll.image.alt | default: coll.title | escape }}"
+                    src="{{ category_image | image_url: width: 400 }}"
+                    width="{{ category_image.width }}"
+                    height="{{ category_image.height }}"
+                    alt="{{ category_image.alt | default: coll.title | escape }}"
                     loading="lazy"
                   >
                 {%- else -%}

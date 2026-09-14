@@ -1,7 +1,7 @@
 <!-- sections/sweets-box-feature.liquid -->
 {%- liquid
   assign se_stts = section.settings
-  assign image = se_stts.image
+  assign image = se_stts.image | default: collections['sweet-home'].products.first.featured_image
   assign layout_class = 'sweets-box-feature--image-' | append: se_stts.image_position
 -%}
 <section class="sweets-box-feature {{ layout_class }}" data-section-id="{{ section.id }}" data-section-type="sweets-box-feature">

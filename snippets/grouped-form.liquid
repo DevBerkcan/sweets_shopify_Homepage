@@ -58,9 +58,9 @@ assign txt_qv = 'products.product_card.quick_view' | t -%}
 	         </td>
 	         <td class="t4s-grouped-pr__qty">
 	            <div data-quantity-wrapper class="t4s-quantity-wrapper"> 
-	               <button data-quantity-selector data-decrease-qty type="button" class="t4s-quantity-selector is--minus"><svg focusable="false" class="icon icon--minus" viewBox="0 0 10 2" role="presentation"><path d="M10 0v2H0V0z" fill="currentColor"></path></svg></button>
-	               <input data-groups-qty-value data-quantity-value type="number" class="t4s-quantity-input" step="{{ current_variant.quantity_rule.increment | default: 1 }}" min="{{ min }}" max="{% if current_variant.inventory_management == blank or current_variant.inventory_policy == 'continue' %}9999{% else %}{{ current_variant.inventory_quantity | default: 9999 }}{% endif %}" name="items[][quantity]" value="1" size="4" pattern="[0-9]*" inputmode="numeric">
-	               <button data-quantity-selector data-increase-qty type="button" class="t4s-quantity-selector is--plus"><svg focusable="false" class="icon icon--plus" viewBox="0 0 10 10" role="presentation"><path d="M6 4h4v2H6v4H4V6H0V4h4V0h2v4z" fill="currentColor" fill-rule="evenodd"></path></svg></button>
+	               <button aria-label="{{ 'cart.cart_page.label.quantity' | t | escape }} -" data-quantity-selector data-decrease-qty type="button" class="t4s-quantity-selector is--minus"><svg focusable="false" class="icon icon--minus" viewBox="0 0 10 2" role="presentation"><path d="M10 0v2H0V0z" fill="currentColor"></path></svg></button>
+	               <input aria-label="{{ 'cart.cart_page.label.quantity' | t | escape }}" data-groups-qty-value data-quantity-value type="number" class="t4s-quantity-input" step="{{ current_variant.quantity_rule.increment | default: 1 }}" min="{{ min }}" max="{% if current_variant.inventory_management == blank or current_variant.inventory_policy == 'continue' %}9999{% else %}{{ current_variant.inventory_quantity | default: 9999 }}{% endif %}" name="items[][quantity]" value="1" size="4" pattern="[0-9]*" inputmode="numeric">
+	               <button aria-label="{{ 'cart.cart_page.label.quantity' | t | escape }} +" data-quantity-selector data-increase-qty type="button" class="t4s-quantity-selector is--plus"><svg focusable="false" class="icon icon--plus" viewBox="0 0 10 10" role="presentation"><path d="M6 4h4v2H6v4H4V6H0V4h4V0h2v4z" fill="currentColor" fill-rule="evenodd"></path></svg></button>
 	            </div>
 	         </td>
 	      </tr>
@@ -104,9 +104,9 @@ assign txt_qv = 'products.product_card.quick_view' | t -%}
 	         </td>
 	         <td class="t4s-grouped-pr__qty">
 	            <div data-quantity-wrapper class="t4s-quantity-wrapper"> 
-	               <button data-quantity-selector data-decrease-qty type="button" class="t4s-quantity-selector is--minus"><svg focusable="false" class="icon icon--minus" viewBox="0 0 10 2" role="presentation"><path d="M10 0v2H0V0z" fill="currentColor"></path></svg></button>
-	               <input data-groups-qty-value data-quantity-value type="number" class="t4s-quantity-input" step="{{ current_variant.quantity_rule.increment | default: 1 }}" min="{{ min }}" max="{% if available_v_1.inventory_management == blank or available_v_1.inventory_policy == 'continue' %}9999{% else %}{{ available_v_1.inventory_quantity | default: 9999 }}{% endif %}" name="items[][quantity]" value="{{ qty }}" size="4" pattern="[0-9]*" inputmode="numeric">
-	               <button data-quantity-selector data-increase-qty type="button" class="t4s-quantity-selector is--plus"><svg focusable="false" class="icon icon--plus" viewBox="0 0 10 10" role="presentation"><path d="M6 4h4v2H6v4H4V6H0V4h4V0h2v4z" fill="currentColor" fill-rule="evenodd"></path></svg></button>
+	               <button aria-label="{{ 'cart.cart_page.label.quantity' | t | escape }} -" data-quantity-selector data-decrease-qty type="button" class="t4s-quantity-selector is--minus"><svg focusable="false" class="icon icon--minus" viewBox="0 0 10 2" role="presentation"><path d="M10 0v2H0V0z" fill="currentColor"></path></svg></button>
+	               <input aria-label="{{ 'cart.cart_page.label.quantity' | t | escape }}" data-groups-qty-value data-quantity-value type="number" class="t4s-quantity-input" step="{{ current_variant.quantity_rule.increment | default: 1 }}" min="{{ min }}" max="{% if available_v_1.inventory_management == blank or available_v_1.inventory_policy == 'continue' %}9999{% else %}{{ available_v_1.inventory_quantity | default: 9999 }}{% endif %}" name="items[][quantity]" value="{{ qty }}" size="4" pattern="[0-9]*" inputmode="numeric">
+	               <button aria-label="{{ 'cart.cart_page.label.quantity' | t | escape }} +" data-quantity-selector data-increase-qty type="button" class="t4s-quantity-selector is--plus"><svg focusable="false" class="icon icon--plus" viewBox="0 0 10 10" role="presentation"><path d="M6 4h4v2H6v4H4V6H0V4h4V0h2v4z" fill="currentColor" fill-rule="evenodd"></path></svg></button>
 	            </div>
 	         </td>
 	      </tr>

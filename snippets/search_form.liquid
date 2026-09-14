@@ -10,9 +10,9 @@
         </div>
       {%- endif -%}
        <input type="hidden" name="resources[options][fields]" value="title,product_type,variants.title,vendor,variants.sku,tag">
-      <input type="text" name="q" value="{{ search_terms }}" placeholder="{{ 'search.general.placeholder' | t }}" class="t4s-search-form__input js_iput_search col" />
+      <input type="text" name="q" value="{{ search_terms | escape }}" placeholder="{{ 'search.general.placeholder' | t }}" class="t4s-search-form__input js_iput_search col" />
       <button type="reset" class="t4s-search-form__clear-action"><i class="las la-times"></i></button>
     </div>
-    <button type="submit" class="t4s-search-form__connected-submit js_btn_search"><i class="las la-search"></i></button>
+    <button aria-label="{{ 'general.mobile_menu.search' | t | escape }}" type="submit" class="t4s-search-form__connected-submit js_btn_search"><i class="las la-search"></i></button>
   </div>
 </form>

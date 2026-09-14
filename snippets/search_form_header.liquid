@@ -181,7 +181,7 @@
     <div class="t4s-search-header__main t4s-pr t4s-oh t4s-d-flex t4s-col t4s-col-item">
        <input type="hidden" name="resources[options][fields]" value="title,product_type,variants.title,vendor,variants.sku,tag">
       <input data-input-search class="t4s-search-header__input t4s-input__currentcolor" autocomplete="off" type="text" name="q" placeholder="{{ 'search.general.placeholder_products' | t }}">
-      <button class="t4s-search-header__submit{% if settings.ajax_search %} t4s-pe-none{% endif %}" type="submit"><svg class="t4s-icon t4s-icon--search" aria-hidden="true" focusable="false" role="presentation"><use href="#icon-h-search"></use></svg></button>
+      <button aria-label="{{ 'general.mobile_menu.search' | t | escape }}" class="t4s-search-header__submit{% if settings.ajax_search %} t4s-pe-none{% endif %}" type="submit"><svg class="t4s-icon t4s-icon--search" aria-hidden="true" focusable="false" role="presentation"><use href="#icon-h-search"></use></svg></button>
     </div>
   </form>
   <div class="t4s-search-h-break t4s-pa t4s-w-100" style="height:20px;"></div>

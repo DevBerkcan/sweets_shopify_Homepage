@@ -30,7 +30,7 @@ t4sp-theme t4s-wrapper__{{ settings.general_layout }}{% if settings.animations_r
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, height=device-height, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="{{ settings.body_bg }}">
     <link rel="canonical" href="{{ canonical_url }}">
     <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
@@ -60,6 +60,7 @@ t4sp-theme t4s-wrapper__{{ settings.general_layout }}{% if settings.animations_r
     
     <script src="{{ 'lazysizes.min.js' | asset_url }}" async="async"></script>
     <script src="{{ 'global.min.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'sweets-finder.js' | asset_url }}" defer="defer"></script>
     {{ content_for_header }}
     {%- render 'head_assets', t_name: t_name, isRTL: isRTL -%}
     
@@ -97,6 +98,7 @@ t4sp-theme t4s-wrapper__{{ settings.general_layout }}{% if settings.animations_r
     document.body.appendChild(s);
   })();
    
+    if (['show-random-image', 'random-image', 'blurred-overlay', 'show-answer', 'hide-answer'].every(function(id) { return document.getElementById(id); })) {
     document.getElementById('show-random-image').addEventListener('click', function() {
     const imageContainer = document.getElementById('random-image');
     const images = [
@@ -155,6 +157,7 @@ document.getElementById('hide-answer').addEventListener('click', function() {
     document.getElementById('show-answer').style.display = 'inline';
     document.getElementById('hide-answer').style.display = 'none';
 });
+    }
     
   </script>
   </body>

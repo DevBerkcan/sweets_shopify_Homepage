@@ -2,6 +2,13 @@
 {%- liquid
   assign se_stts = section.settings
   assign image = se_stts.image
+  assign hero_collection = se_stts.collection | default: collections['bestseller-boxen']
+  assign hero_product = hero_collection.products.first
+  assign use_product_image = false
+  if image == blank and hero_product.featured_image != blank and se_stts.use_theme_image != true
+    assign image = hero_product.featured_image
+    assign use_product_image = true
+  endif
   assign image_mobile = se_stts.image_mobile | default: image
   assign image_2 = se_stts.image_secondary_1
   assign image_3 = se_stts.image_secondary_2
@@ -9,36 +16,24 @@
   if image_2 != blank or image_3 != blank
     assign is_collage = true
   endif
+  if se_stts.use_theme_image
+    assign is_collage = false
+  endif
 -%}
-<section class="sweets-hero{% if is_collage %} sweets-hero--collage{% else %} sweets-hero--bg{% endif %}" data-section-id="{{ section.id }}" data-section-type="sweets-hero">
-  {%- unless is_collage -%}
-    {%- if image or image_mobile -%}
+<section class="sweets-hero{% if use_product_image %} sweets-hero--product{% elsif is_collage %} sweets-hero--collage{% else %} sweets-hero--bg{% endif %}{% if se_stts.use_theme_image %} sweets-hero--theme-image{% endif %}" data-section-id="{{ section.id }}" data-section-type="sweets-hero">
+  {%- unless is_collage or use_product_image -%}
+    {%- if image or image_mobile or se_stts.use_theme_image -%}
       <div class="sweets-hero__bg" aria-hidden="true">
-        {%- if image -%}
-          <img
-            class="sweets-hero__bg-image sweets-hero__bg-image--desktop"
-            srcset="{{ image | image_url: width: 1200 }} 1200w, {{ image | image_url: width: 1600 }} 1600w, {{ image | image_url: width: 2000 }} 2000w"
-            sizes="100vw"
-            src="{{ image | image_url: width: 1600 }}"
-            width="{{ image.width }}"
-            height="{{ image.height }}"
-            alt="{{ image.alt | escape }}"
-            loading="eager"
-            fetchpriority="high"
-          >
-        {%- endif -%}
-        {%- if image_mobile -%}
-          <img
-            class="sweets-hero__bg-image sweets-hero__bg-image--mobile"
-            srcset="{{ image_mobile | image_url: width: 700 }} 700w, {{ image_mobile | image_url: width: 1000 }} 1000w"
-            sizes="100vw"
-            src="{{ image_mobile | image_url: width: 900 }}"
-            width="{{ image_mobile.width }}"
-            height="{{ image_mobile.height }}"
-            alt="{{ image_mobile.alt | escape }}"
-            loading="eager"
-            fetchpriority="high"
-          >
+        {%- if se_stts.use_theme_image -%}
+          <img src="{{ 'hero.png' | asset_url }}" width="1672" height="941" alt="" class="sweets-hero__bg-image" loading="eager" fetchpriority="high">
+        {%- else -%}
+        <picture>
+          {%- if image_mobile != blank -%}
+            <source media="(max-width: 699px)" srcset="{{ image_mobile | image_url: width: 400 }} 400w, {{ image_mobile | image_url: width: 700 }} 700w, {{ image_mobile | image_url: width: 1000 }} 1000w" sizes="100vw">
+          {%- endif -%}
+          {%- assign desktop_image = image | default: image_mobile -%}
+          {{ desktop_image | image_url: width: 1600 | image_tag: widths: '700, 1200, 1600, 2000', sizes: '100vw', loading: 'eager', fetchpriority: 'high', class: 'sweets-hero__bg-image' }}
+        </picture>
         {%- endif -%}
         <div class="sweets-hero__scrim"></div>
       </div>
@@ -46,6 +41,7 @@
   {%- endunless -%}
   <div class="sweets-container sweets-hero__inner">
     <div class="sweets-hero__content">
+      {%- if se_stts.eyebrow != blank -%}<p class="sweets-hero__eyebrow">{{ se_stts.eyebrow | escape }}</p>{%- endif -%}
       {%- if se_stts.heading != blank -%}
         <h1 class="sweets-hero__heading">{{ se_stts.heading }}</h1>
       {%- endif -%}
@@ -63,6 +59,17 @@
         </div>
       {%- endif -%}
     </div>
+
+    {%- if use_product_image -%}
+      <div class="sweets-hero__showcase">
+        <span class="sweets-hero__orbit" aria-hidden="true">✦</span>
+        <a class="sweets-hero__product-link" href="{{ hero_product.url }}">
+          {{ image | image_url: width: 1000 | image_tag: widths: '360, 540, 750, 1000', sizes: '(min-width: 990px) 45vw, 90vw', loading: 'eager', fetchpriority: 'high', class: 'sweets-hero__product-image', alt: hero_product.title }}
+          <span class="sweets-hero__product-caption">{{ hero_collection.title | escape }} <span aria-hidden="true">↗</span></span>
+        </a>
+        <span class="sweets-hero__stamp">Dein nächstes<br>Nasch-Abenteuer</span>
+      </div>
+    {%- endif -%}
 
     {%- if is_collage -%}
       <div class="sweets-hero__media sweets-hero__media--collage">
@@ -120,6 +127,9 @@
   "tag": "section",
   "class": "sweets-hero-section",
   "settings": [
+    { "type": "checkbox", "id": "use_theme_image", "label": "Mitgelieferte hero.png verwenden", "default": false, "info": "Verwendet assets/hero.png statt der unten ausgewählten Bilder." },
+    { "type": "text", "id": "eyebrow", "label": "Kleine Überschrift", "default": "Kleine Box. Große Welt." },
+    { "type": "collection", "id": "collection", "label": "Hero-Produkte", "info": "Ohne Hauptbild wird das erste Produkt dieser Kollektion gezeigt." },
     {
       "type": "text",
       "id": "heading",

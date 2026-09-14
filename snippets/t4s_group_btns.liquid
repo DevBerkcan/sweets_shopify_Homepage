@@ -270,11 +270,11 @@ t4s_group_btns_split
 						</div>
 					</div>
 	      </div>
-			  <a class="t4s-pr t4s-d-lg-none" href="{{ routes.search_url }}" data-drawer-delay- data-drawer-options='{ "id":"#t4s-search-hidden" }'>
+			  <a class="t4s-pr t4s-d-lg-none" href="{{ routes.search_url }}" aria-label="{{ 'general.mobile_menu.search' | t | escape }}" data-drawer-delay- data-drawer-options='{ "id":"#t4s-search-hidden" }'>
 					<svg class="t4s-icon t4s-icon--search" aria-hidden="true" focusable="false" role="presentation"><use href="#icon-h-search"></use></svg>
 			  </a>
     {%- else -%}
-			<a class="t4s-pr" href="{{ routes.search_url }}" data-drawer-delay- data-drawer-options='{ "id":"#t4s-search-hidden" }'>
+			<a class="t4s-pr" href="{{ routes.search_url }}" aria-label="{{ 'general.mobile_menu.search' | t | escape }}" data-drawer-delay- data-drawer-options='{ "id":"#t4s-search-hidden" }'>
 				<svg class="t4s-icon t4s-icon--search" aria-hidden="true" focusable="false" role="presentation"><use href="#icon-h-search"></use></svg>
 			</a>
 		{%- endif -%}
@@ -352,7 +352,7 @@ t4s_group_btns_split
 
 	{%- if se_stts.cart_des != '0' -%}
 	<div class="t4s-site-nav__icon t4s-site-nav__cart">	
-		<a href="{{ routes.cart_url }}"{% if request.page_type != 'cart' and settings.cart_type != 'disable' %} data-drawer-delay- data-drawer-options='{ "id":"#t4s-mini_cart" }'{% endif %}>
+		<a href="{{ routes.cart_url }}" aria-label="{{ 'cart.mini_cart.title' | t | escape }}"{% if request.page_type != 'cart' and settings.cart_type != 'disable' %} data-drawer-delay- data-drawer-options='{ "id":"#t4s-mini_cart" }'{% endif %}>
 			<span class="t4s-pr t4s-icon-cart__wrap">
 			  <svg class="t4s-icon t4s-icon--cart" aria-hidden="true" focusable="false" role="presentation"><use href="#icon-h-cart"></use></svg>
 			  <span data-cart-count class="t4s-pa t4s-op-0 t4s-ts-op t4s-count-box">{{ cart.item_count }}</span>

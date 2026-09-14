@@ -14,7 +14,7 @@
     {%- endfor -%}
 
     {%- if has_options -%}
-      <div class="sweets-finder__tabs" role="tablist">
+      <div class="sweets-finder__tabs" role="tablist" aria-label="Snack-Vorlieben">
         {%- for block in section.blocks -%}
           {%- if block.settings.collection != blank -%}
             <button type="button" id="finder-tab-{{ block.id }}" class="sweets-finder__tab" role="tab" aria-selected="false" aria-controls="finder-panel-{{ block.id }}" data-finder-tab data-target="finder-panel-{{ block.id }}" {{ block.shopify_attributes }}>
@@ -29,7 +29,7 @@
           assign coll = block.settings.collection
         -%}
         {%- if coll != blank -%}
-          <div id="finder-panel-{{ block.id }}" class="sweets-finder__panel" role="tabpanel" aria-labelledby="finder-tab-{{ block.id }}" data-finder-panel hidden>
+          <div id="finder-panel-{{ block.id }}" class="sweets-finder__panel" role="tabpanel" aria-labelledby="finder-tab-{{ block.id }}" data-finder-panel tabindex="0">
             {%- if block.settings.reason != blank -%}
               <p class="sweets-finder__reason">{{ block.settings.reason }}</p>
             {%- endif -%}
@@ -63,52 +63,13 @@
       {%- endfor -%}
     {%- else -%}
       <p class="sweets-finder__fallback">
-        <a href="{{ se_stts.fallback_link | default: '/collections/all' }}" class="sweets-btn sweets-btn--primary">Alle Produkte ansehen</a>
+        <a href="{{ se_stts.fallback_link | default: routes.all_products_collection_url }}" class="sweets-btn sweets-btn--primary">Alle Produkte ansehen</a>
       </p>
     {%- endif -%}
   </div>
 </section>
 
-<script>
-  (function () {
-    var root = document.currentScript.closest('.sweets-snack-finder');
-    if (!root || root.dataset.finderInit === 'true') return;
-    root.dataset.finderInit = 'true';
 
-    var tabs = root.querySelectorAll('[data-finder-tab]');
-    var panels = root.querySelectorAll('[data-finder-panel]');
-
-    function closeAll() {
-      panels.forEach(function (panel) { panel.hidden = true; });
-      tabs.forEach(function (tab) {
-        tab.classList.remove('is--active');
-        tab.setAttribute('aria-selected', 'false');
-      });
-    }
-
-    root.addEventListener('click', function (event) {
-      var tab = event.target.closest('[data-finder-tab]');
-      if (tab) {
-        var targetId = tab.getAttribute('data-target');
-        var isAlreadyOpen = tab.classList.contains('is--active');
-        closeAll();
-        if (!isAlreadyOpen) {
-          var panel = root.querySelector('#' + targetId);
-          if (panel) {
-            panel.hidden = false;
-            tab.classList.add('is--active');
-            tab.setAttribute('aria-selected', 'true');
-            panel.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'nearest' });
-          }
-        }
-        return;
-      }
-      if (event.target.closest('[data-finder-reset]')) {
-        closeAll();
-      }
-    });
-  })();
-</script>
 
 {% schema %}
 {
