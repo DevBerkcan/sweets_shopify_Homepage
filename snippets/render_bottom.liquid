@@ -334,7 +334,7 @@
 
 <link rel="stylesheet" href="{{ 'mobile_nav.css' | asset_url }}" media="print" onload="this.media='all'">
 {%- if admin_sp -%}
-   <div id="t4s-menu-drawer" class="t4s-drawer t4s-drawer__left t4s-dn{% if is_page_index %} t4s-page-index-{{ page.id }}{% endif %}" aria-hidden="true">
+   <div id="t4s-menu-drawer" class="t4s-drawer t4s-drawer__left t4s-dn{% if is_page_index %} t4s-page-index-{{ page.id }}{% endif %}" aria-hidden="true" role="dialog" aria-modal="true" aria-label="{{ 'general.mobile_menu.menu' | t }}">
      {%- if mobile_nav_type == '1' or mobile_nav_type == '2' -%}
      <div class="t4s-drawer__header"><span>{% if mobile_nav_type == '1' %}{%- assign nav_active = 'is--active' -%}{{ 'general.mobile_menu.menu' | t }}{% else %}{%- assign cat_active = 'is--active' -%}{{ 'general.mobile_menu.categories' | t }}{% endif %}</span></div>
      {%- else -%}
@@ -361,7 +361,7 @@
    {%- if page_type != 'cart' and settings.cart_type != 'disable' %}{% section 'mini_cart' %}</div>{% endif -%}
 
 {%- else -%}
-  <div id="t4s-menu-drawer" class="t4s-drawer t4s-drawer__left{% if settings.header_design != 'sidebar' %} t4s-d-lg-none{% endif %}" aria-hidden="true">
+  <div id="t4s-menu-drawer" class="t4s-drawer t4s-drawer__left{% if settings.header_design != 'sidebar' %} t4s-d-lg-none{% endif %}" aria-hidden="true" role="dialog" aria-modal="true" aria-label="{{ 'general.mobile_menu.menu' | t }}">
     <div class="t4s-skeleton-element ske-h-50 ske-mb-20 ske-shine"></div>
     <div class="t4s-skeleton-element ske-mrl-20 ske-shine"></div><div class="t4s-skeleton-element ske-mrl-20 ske-shine"></div><div class="t4s-skeleton-element ske-mrl-20 ske-shine"></div><div class="t4s-skeleton-element ske-mrl-20 ske-shine"></div><div class="t4s-skeleton-element ske-mrl-20 ske-shine"></div>
     <div class="t4s-skeleton-element ske-mrl-20 ske-shine"></div><div class="t4s-skeleton-element ske-mrl-20 ske-shine"></div><div class="t4s-skeleton-element ske-mrl-20 ske-shine"></div><div class="t4s-skeleton-element ske-mrl-20 ske-shine"></div><div class="t4s-skeleton-element ske-mrl-20 ske-shine"></div>
@@ -371,7 +371,7 @@
 
 {%- if admin_sp == false and page_type != 'cart' and settings.cart_type != 'disable' -%}
 <link href="{{ 'mini-cart.css' | asset_url }}" rel="stylesheet" media="print" onload="this.media='all'">
-<div data-cart-wrapper id="t4s-mini_cart" data-ccount="{{ cart.item_count }}" class="t4s-drawer t4s-drawer__right t4s-dn" aria-hidden="true">
+<div data-cart-wrapper id="t4s-mini_cart" data-ccount="{{ cart.item_count }}" class="t4s-drawer t4s-drawer__right t4s-dn" aria-hidden="true" role="dialog" aria-modal="true" aria-label="{{ 'cart.mini_cart.title' | t }}">
   {%- if cart.item_count > 0 -%}
     <div class="t4s-skeleton-element ske-h-50 ske-mt-15 ske-mb-20 ske-mrl-15 ske-shine"></div>
     <div class="t4s-row t4s-g-0 ske-mrl-15 ske-card ske-mb-20">
@@ -486,7 +486,7 @@
 {%- endunless -%}
 
 <link href="{{ 'search-hidden.css' | asset_url }}" rel="stylesheet" media="print" onload="this.media='all'">
-<div data-predictive-search data-sid="search-hidden" id="t4s-search-hidden" class="t4s-drawer t4s-drawer__right" aria-hidden="true">
+<div data-predictive-search data-sid="search-hidden" id="t4s-search-hidden" class="t4s-drawer t4s-drawer__right" aria-hidden="true" role="dialog" aria-modal="true" aria-label="{{ 'search.general.title' | t }}">
   <div class="t4s-skeleton-element ske-h-50 ske-mt-20 ske-mb-20 ske-shine ske-mrl-20 ske-mt-15"></div>
   <div class="t4s-skeleton-element ske-h-50 ske-mrl-20"></div><div class="t4s-skeleton-element ske-h-50 ske-mrl-20 ske-shine"></div>
   <div class="t4s-skeleton-element ske-h-50 ske-mrl-20"></div><div class="t4s-skeleton-element ske-h-50 ske-mrl-20 ske-shine"></div>

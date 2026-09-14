@@ -35,7 +35,7 @@
           {%- assign blockid = block.id -%}
           {%- if bk_stts.title == blank or bk_stts.content == blank -%}{% continue %}{%- endif -%}
           <div class="t4s-tab-wrapper {% if forloop_first and se_stts.auto_active %} t4s-active {% endif %}" data-t4s-tab-wrapper {{ block.shopify_attributes }} itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-            <a id="b_{{ block.id }}" class="t4s-accor-title" href="#t4s-{{ blockid }}" rel="nofollow" data-t4s-tab-item data-no-instant>
+            <a id="b_{{ block.id }}" class="t4s-accor-title" href="#t4s-{{ blockid }}" rel="nofollow" data-t4s-tab-item data-no-instant aria-expanded="{% if forloop_first and se_stts.auto_active %}true{% else %}false{% endif %}" aria-controls="t4s-{{ blockid }}">
               <span class="t4s-accor-text">
                 <span class="t4s-accor-icon">{%- render 'icon_accordion',icon: bk_stts.icon -%} </span>
                 <span itemprop="name">{{ bk_stts.title }}</span>
@@ -54,6 +54,23 @@
     </div>
     {{- html_layout[1] -}}
 </div>
+
+<script>
+  (function () {
+    if (window.__sweetsAccordionA11yInit) return;
+    window.__sweetsAccordionA11yInit = true;
+    document.addEventListener('click', function (event) {
+      var trigger = event.target.closest('.t4s-accor-title');
+      if (!trigger) return;
+      requestAnimationFrame(function () {
+        var wrapper = trigger.closest('.t4s-tab-wrapper');
+        var expanded = !!(wrapper && wrapper.classList.contains('t4s-active'));
+        trigger.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+      });
+    });
+  })();
+</script>
+
 {% schema %}
 {
   "name": "Accordion",

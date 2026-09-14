@@ -3,6 +3,16 @@
   assign se_stts = section.settings
   assign format_blocks = section.blocks | where: 'type', 'format_option'
   assign origin_blocks = section.blocks | where: 'type', 'origin_option'
+  assign format_count = 0
+  for block in format_blocks
+    if block.settings.collection != blank
+      assign format_count = format_count | plus: 1
+    endif
+  endfor
+  assign show_format_step = false
+  if format_count > 1
+    assign show_format_step = true
+  endif
 -%}
 <section class="sweets-category-nav" data-section-id="{{ section.id }}" data-section-type="sweets-category-navigator">
   <div class="sweets-container">
@@ -13,27 +23,31 @@
       <p class="sweets-category-nav__intro">{{ se_stts.subheading }}</p>
     {%- endif -%}
 
-    <div class="sweets-category-nav__step">
-      <div class="sweets-category-nav__step-label">1 · Nach Format</div>
-      <div class="sweets-category-nav__grid sweets-category-nav__grid--format">
-        {%- for block in format_blocks -%}
-          {%- assign coll = block.settings.collection -%}
-          {%- if coll != blank -%}
-            <a href="{{ coll.url }}" class="sweets-category-nav__tile" {{ block.shopify_attributes }}>
-              <span class="sweets-category-nav__tile-title">{{ block.settings.label | default: coll.title }}</span>
-              {%- if block.settings.description != blank -%}
-                <span class="sweets-category-nav__tile-desc">{{ block.settings.description }}</span>
-              {%- endif -%}
-            </a>
-          {%- elsif request.design_mode -%}
-            <span class="sweets-category-nav__tile sweets-category-nav__tile--empty" {{ block.shopify_attributes }}>Collection im Editor auswählen</span>
-          {%- endif -%}
-        {%- endfor -%}
+    {%- if show_format_step or request.design_mode -%}
+      <div class="sweets-category-nav__step">
+        <div class="sweets-category-nav__step-label">1 · Nach Format</div>
+        <div class="sweets-category-nav__grid sweets-category-nav__grid--format">
+          {%- for block in format_blocks -%}
+            {%- assign coll = block.settings.collection -%}
+            {%- if coll != blank -%}
+              <a href="{{ coll.url }}" class="sweets-category-nav__tile" {{ block.shopify_attributes }}>
+                <span class="sweets-category-nav__tile-title">{{ block.settings.label | default: coll.title }}</span>
+                {%- if block.settings.description != blank -%}
+                  <span class="sweets-category-nav__tile-desc">{{ block.settings.description }}</span>
+                {%- endif -%}
+              </a>
+            {%- elsif request.design_mode -%}
+              <span class="sweets-category-nav__tile sweets-category-nav__tile--empty" {{ block.shopify_attributes }}>Collection im Editor auswählen</span>
+            {%- endif -%}
+          {%- endfor -%}
+        </div>
       </div>
-    </div>
+    {%- endif -%}
 
     <div class="sweets-category-nav__step">
-      <div class="sweets-category-nav__step-label">2 · Nach Herkunft</div>
+      {%- if show_format_step -%}
+        <div class="sweets-category-nav__step-label">2 · Nach Herkunft</div>
+      {%- endif -%}
       <div class="sweets-category-nav__grid sweets-category-nav__grid--origin">
         {%- for block in origin_blocks -%}
           {%- assign coll = block.settings.collection -%}

@@ -25,6 +25,19 @@
   margin: 0 0 var(--sweets-space-xs);
 }
 
+/* ---------- Fokuszustände (Barrierefreiheit) ---------- */
+.sweets-btn:focus-visible,
+.sweets-finder__tab:focus-visible,
+.sweets-finder__reset:focus-visible,
+.sweets-category-nav__tile:focus-visible,
+.sweets-world-nav__tile:focus-visible,
+.sweets-box-compare__card a:focus-visible,
+.sweets-advent-calendar__card a:focus-visible,
+.sweets-finder__product:focus-visible {
+  outline: 3px solid var(--sweets-color-blue);
+  outline-offset: 2px;
+}
+
 .sweets-btn {
   display: inline-flex;
   align-items: center;
@@ -195,12 +208,23 @@
   }
 }
 
+/* Garantierte Lesbarkeit unabhängig vom Bildinhalt: eigene Hintergrundfläche
+   direkt hinter dem Text, zusätzlich zum Scrim-Verlauf (der allein je nach
+   Foto nicht überall ausreichend Kontrast liefert). */
+.sweets-hero--bg .sweets-hero__content {
+  position: relative;
+  background-color: rgba(255, 253, 248, 0.9);
+  border-radius: var(--sweets-radius-lg);
+  padding: var(--sweets-space-md) var(--sweets-space-sm);
+}
+
 @media (min-width: 990px) {
   .sweets-hero--bg {
     min-height: 620px;
   }
   .sweets-hero--bg .sweets-hero__content {
-    max-width: 48%;
+    max-width: 52%;
+    padding: var(--sweets-space-lg);
   }
   .sweets-hero__scrim {
     background: linear-gradient(100deg, rgba(255, 253, 248, 0.92) 0%, rgba(255, 253, 248, 0.78) 38%, rgba(255, 253, 248, 0.15) 65%, rgba(255, 253, 248, 0) 85%);
