@@ -1,6 +1,49 @@
 /* Storefront refinements, scoped to the custom sections and homepage. */
 .sweets-hero--theme-image .sweets-hero__scrim { background: linear-gradient(90deg, #fff9edcc 0%, #fff9ed66 35%, transparent 58%); }
 .sweets-hero--theme-image .sweets-hero__content { background: #fffdf8d9; }
+
+/* Hero-Content-Feinschliff: Eyebrow als Pill-Badge, ruhigere Typografie-
+   Rhythmik, etwas mehr Luft zwischen den Elementen. */
+.sweets-hero__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  width: fit-content;
+  padding: 7px 16px;
+  border-radius: 999px;
+  background: #e6f6fa;
+  color: #0f6478;
+  font-size: 12.5px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin: 0 0 16px;
+}
+.sweets-hero__eyebrow::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: currentColor;
+  flex: none;
+}
+.sweets-hero--bg .sweets-hero__eyebrow { margin-inline: auto; }
+.sweets-hero__heading {
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+.sweets-hero__subheading {
+  line-height: 1.6;
+}
+.sweets-hero--bg .sweets-hero__content {
+  gap: 4px;
+}
+.sweets-hero--bg .sweets-hero__ctas {
+  margin-top: 20px;
+}
+@media (min-width: 990px) {
+  .sweets-hero__eyebrow { margin-inline: 0; }
+}
 @media (max-width: 989px) {
   .sweets-hero--theme-image { display: flex; flex-direction: column; min-height: 0; }
   .sweets-hero--theme-image .sweets-hero__bg { position: relative; width: 100%; aspect-ratio: 1672 / 941; }
