@@ -8,6 +8,18 @@
   .sweets-hero--theme-image .sweets-hero__inner { padding-block: 24px 36px; }
   .sweets-hero--theme-image .sweets-hero__content { padding: 0; background: transparent; }
 }
+/* Desktop: Sektion folgt der echten Bildproportion statt einer festen
+   Mindesthöhe, damit die komplette Komposition sichtbar bleibt (kein
+   Zuschnitt durch object-fit:cover in einer zu niedrigen/schmalen Box).
+   Bild bleibt Vollflächen-Hintergrund mit überlagertem Text (Scrim +
+   Content-Karte bleiben aktiv), nur die Höhenberechnung ändert sich. */
+@media (min-width: 990px) {
+  .sweets-hero--theme-image {
+    aspect-ratio: 1672 / 941;
+    max-height: 780px;
+    min-height: 0;
+  }
+}
 .sweets-hero--product { background: #fff7e7; }
 .sweets-hero--product .sweets-hero__inner { gap: 48px; padding-block: 36px; min-height: 500px; }
 .sweets-hero--product .sweets-hero__content { flex: 1; min-width: 0; }
@@ -84,3 +96,4 @@
   .sweets-btn, .sweets-category-nav__tile, .sweets-finder__tab { transition: none; }
   .t4s-marquee--animation, .t4s-scrolling-text { animation-play-state: paused !important; }
 }
+
