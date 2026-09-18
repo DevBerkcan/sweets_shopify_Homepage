@@ -716,5 +716,47 @@
     "blog_excerpt": "Mağazanız henüz blog gönderisi yayınlamadı. Bir blog, yeni ürün lansmanları, ipuçları veya müşterilerinizle paylaşmak istediğiniz diğer haberler hakkında konuşmak için kullanılabilir. Kendi mağazanız ve blogunuz için ilham ve tavsiyeler için Shopify'nin e-ticaret blogunu ziyaret edebilirsiniz.",
     "blog_author": "Yazar adı",
     "no_content": "Bu bölüm şu anda herhangi bir içerik içermiyor. Kenar çubuğunu kullanarak bu bölüme içerik ekleyin."
+  },
+"sweets": {
+    "guide": {
+    "interest": "1. What would you like to discover?",
+    "any": "Surprise me",
+    "next": "Continue",
+    "budget": "2. What is your budget?",
+    "any_budget": "Any budget",
+    "up_to": "Up to",
+    "available_only": "Available products only",
+    "back": "Back",
+    "show": "Show selection",
+    "empty": "No products match this selection right now. Change your budget or start again.",
+    "compare": "Compare",
+    "price": "Price",
+    "category": "Category",
+    "availability": "Availability",
+    "available": "Available",
+    "remove": "Remove",
+    "restart": "Start again",
+    "compare_help": "Select up to three products. Current individual prices are shown; select bundle offers on the product page. Missing product details are omitted.",
+    "count": "products selected",
+    "compare_empty": "Select Compare on a product to see it here.",
+    "clear": "Clear comparison"
+},
+  "view_all": "Tümünü gör",
+  "select_products": "Bir koleksiyon veya ürün seçin.",
+  "about_collection": "{{ title }} hakkında",
+  "collections": "Koleksiyonlar",
+  "finder_label": "Atıştırmalık tercihleri",
+  "empty": "Şu anda ürün bulunmuyor.",
+  "reset": "Başka bir seçenek seç",
+  "all_products": "Tüm ürünleri gör",
+  "shipping": "Kargo ve teslimat",
+  "facts": {
+    "sorte": "Tür",
+    "tuerchen": "Kapak sayısı",
+    "masse": "Boyutlar",
+    "inhaltstyp": "İçerik",
+    "zubehoer": "Aksesuarlar",
+    "anlass": "Özel gün"
   }
+}
 }

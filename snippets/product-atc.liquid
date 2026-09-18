@@ -9,7 +9,7 @@
 {%- elsif pr_available == false -%}
    <a href="{{ pr_url }}" class="t4s-pr-item-btn t4s-pr-addtocart" rel="nofollow"><span class="t4s-svg-pr-icon"><svg viewBox="0 0 24 24"><use xlink:href="#t4s-icon-link"></use></svg></span><span class="t4s-text-pr">{{ 'products.product_card.read_more' | t }}</span></a>
 
-{%- elsif isGrouped -%}
+{%- elsif isGrouped or requires_selling_plan or settings.sweets_offer_product_page -%}
    <a href="{{ pr_url }}" class="t4s-pr-item-btn t4s-pr-addtocart" rel="nofollow"><span class="t4s-svg-pr-icon"><svg viewBox="0 0 24 24"><use xlink:href="#t4s-icon-atc"></use></svg></span><span class="t4s-text-pr">{{ 'products.product_card.view' | t }}</span></a>
 
 {%- elsif isDefault -%}

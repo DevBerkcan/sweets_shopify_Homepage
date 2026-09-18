@@ -707,5 +707,47 @@
     "blog_excerpt": "Votre magasin n'a publié aucun article de blog pour le moment. Un blog peut être utilisé pour parler des nouveaux lancements de produits, des conseils ou d'autres actualités que vous souhaitez partager avec vos clients. Vous pouvez consulter le blog de commerce électronique de Shopify pour trouver de l'inspiration et des conseils pour votre propre magasin et blog.",
     "blog_author": "Nom de l'auteur",
     "no_content": "Cette section ne contient actuellement aucun contenu. Ajoutez du contenu à cette section en utilisant la barre latérale."
+  },
+"sweets": {
+    "guide": {
+    "interest": "1. What would you like to discover?",
+    "any": "Surprise me",
+    "next": "Continue",
+    "budget": "2. What is your budget?",
+    "any_budget": "Any budget",
+    "up_to": "Up to",
+    "available_only": "Available products only",
+    "back": "Back",
+    "show": "Show selection",
+    "empty": "No products match this selection right now. Change your budget or start again.",
+    "compare": "Compare",
+    "price": "Price",
+    "category": "Category",
+    "availability": "Availability",
+    "available": "Available",
+    "remove": "Remove",
+    "restart": "Start again",
+    "compare_help": "Select up to three products. Current individual prices are shown; select bundle offers on the product page. Missing product details are omitted.",
+    "count": "products selected",
+    "compare_empty": "Select Compare on a product to see it here.",
+    "clear": "Clear comparison"
+},
+  "view_all": "Tout voir",
+  "select_products": "Sélectionnez une collection ou des produits.",
+  "about_collection": "À propos de {{ title }}",
+  "collections": "Collections",
+  "finder_label": "Préférences gourmandes",
+  "empty": "Aucun produit disponible actuellement.",
+  "reset": "Choisir autre chose",
+  "all_products": "Voir tous les produits",
+  "shipping": "Expédition et livraison",
+  "facts": {
+    "sorte": "Type",
+    "tuerchen": "Nombre de fenêtres",
+    "masse": "Dimensions",
+    "inhaltstyp": "Contenu",
+    "zubehoer": "Accessoires",
+    "anlass": "Occasion"
   }
+}
 }

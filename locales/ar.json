@@ -707,5 +707,47 @@
     "blog_excerpt": "لم يقم متجرك بنشر أي مقالات في المدونة حتى الآن. يمكن استخدام المدونة للحديث عن إطلاقات المنتجات الجديدة أو النصائح أو أخبار أخرى ترغب في مشاركتها مع عملائك. يمكنك الاطلاع على مدونة التجارة الإلكترونية الخاصة بشوبيفاي للحصول على إلهام ونصائح لمتجرك ومدونتك الخاصة.",
     "blog_author": "اسم المؤلف",
     "no_content": "لا يتضمن هذا القسم حاليًا أي محتوى. أضف محتوى إلى هذا القسم باستخدام الشريط الجانبي."
+  },
+"sweets": {
+    "guide": {
+    "interest": "1. What would you like to discover?",
+    "any": "Surprise me",
+    "next": "Continue",
+    "budget": "2. What is your budget?",
+    "any_budget": "Any budget",
+    "up_to": "Up to",
+    "available_only": "Available products only",
+    "back": "Back",
+    "show": "Show selection",
+    "empty": "No products match this selection right now. Change your budget or start again.",
+    "compare": "Compare",
+    "price": "Price",
+    "category": "Category",
+    "availability": "Availability",
+    "available": "Available",
+    "remove": "Remove",
+    "restart": "Start again",
+    "compare_help": "Select up to three products. Current individual prices are shown; select bundle offers on the product page. Missing product details are omitted.",
+    "count": "products selected",
+    "compare_empty": "Select Compare on a product to see it here.",
+    "clear": "Clear comparison"
+},
+  "view_all": "عرض الكل",
+  "select_products": "اختر مجموعة أو منتجات.",
+  "about_collection": "حول {{ title }}",
+  "collections": "المجموعات",
+  "finder_label": "تفضيلات الوجبات الخفيفة",
+  "empty": "لا توجد منتجات متاحة حالياً.",
+  "reset": "اختر شيئاً آخر",
+  "all_products": "عرض جميع المنتجات",
+  "shipping": "الشحن والتوصيل",
+  "facts": {
+    "sorte": "النوع",
+    "tuerchen": "عدد الأبواب",
+    "masse": "الأبعاد",
+    "inhaltstyp": "المحتويات",
+    "zubehoer": "الملحقات",
+    "anlass": "المناسبة"
   }
+}
 }

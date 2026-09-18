@@ -1,0 +1,21 @@
+{% comment %}Official Vitals placement. Reviews are supplied by the installed app, never by theme demo data.{% endcomment %}
+<section class="sw-app-reviews sweets-container">
+  <h2 class="sweets-section-heading">{{ section.settings.heading | escape }}</h2>
+  <div id="bundle-product_reviews"></div>
+  {% if request.design_mode %}<p class="sw-app-reviews__editor">Vitals → Product Reviews aktivieren und echte Featured Reviews auswählen. Ohne App-Inhalt bleibt dieser Bereich im Shop unsichtbar.</p>{% endif %}
+</section>
+{% style %}
+  .sw-app-reviews { margin-block: 48px; }
+  .sw-app-reviews:has(#bundle-product_reviews:empty) { margin-block: 0; }
+  .sw-app-reviews:has(#bundle-product_reviews:empty) > h2 { display: none; }
+  .sw-app-reviews__editor { padding: 20px; background: var(--sw-sand); }
+{% endstyle %}
+{% schema %}
+{
+  "name":"Sweets echte Bewertungen",
+  "limit":1,
+  "enabled_on":{"templates":["index"]},
+  "settings":[{"type":"text","id":"heading","label":"Überschrift","default":"Was unsere Kundinnen und Kunden sagen"}],
+  "presets":[{"name":"Sweets echte Bewertungen"}]
+}
+{% endschema %}

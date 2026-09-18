@@ -63,10 +63,11 @@ t4sp-theme t4s-wrapper__{{ settings.general_layout }}{% if settings.animations_r
     <script src="{{ 'sweets-finder.js' | asset_url }}" defer="defer"></script>
     {{ content_for_header }}
     {%- render 'head_assets', t_name: t_name, isRTL: isRTL -%}
+    {% if settings.sweets_premium %}{% render 'sweets-premium-assets' %}{% endif %}
     
   </head>
 
-  <body class="template-{{ request.page_type | handle }} {{ class_lazy }}"{% if body_img != blank %} data-bgset="{{ body_img | image_url: width: 1 }}" data-optimumx="2" data-sizes="auto"{% endif -%}>{% if isRTL %}<script type="text/javascript" id="t4s-flicker-fix">// Flicker fix.</script>{% endif -%}
+  <body class="{% if settings.sweets_premium %}sw-shop {% endif %}template-{{ request.page_type | handle }} {{ class_lazy }}"{% if body_img != blank %} data-bgset="{{ body_img | image_url: width: 1 }}" data-optimumx="2" data-sizes="auto"{% endif -%}>{% if isRTL %}<script type="text/javascript" id="t4s-flicker-fix">// Flicker fix.</script>{% endif -%}
     <a class="skip-to-content-link visually-hidden" href="#MainContent">{{ "accessibility.skip_to_text" | t }}</a>
     <div class="t4s-close-overlay t4s-op-0"></div>
 
@@ -78,8 +79,12 @@ t4sp-theme t4s-wrapper__{{ settings.general_layout }}{% if settings.animations_r
       </main>
 
       <footer id="t4s-footer">
-        {%- section 'footer' -%}
-        {%- section 'bottom-bar' -%}
+        {% if settings.sweets_premium %}
+          {% sections 'sweets-footer-group' %}
+        {% else %}
+          {%- section 'footer' -%}
+          {%- section 'bottom-bar' -%}
+        {% endif %}
       </footer>
     </div>
 

@@ -1,0 +1,316 @@
+{
+  "type": "footer",
+  "name": "Sweets Footer",
+  "sections": {
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "bl_col_x6ntyX": {
+          "type": "bl_col",
+          "settings": {
+            "col_heading": "",
+            "menu": "",
+            "menu_style": "1",
+            "col_border": "none",
+            "col_dk": "3",
+            "col_tb": "6",
+            "col_mb": "12",
+            "content_align": "t4s-text-lg-start",
+            "padding_inner": "",
+            "content_align_tb": "t4s-text-md-start",
+            "padding_inner_tb": "",
+            "col_heading_mobile": "",
+            "content_align_mb": "t4s-text-center",
+            "padding_inner_mb": ""
+          }
+        },
+        "image_xBLybb": {
+          "type": "image",
+          "settings": {
+            "image_child": "shopify://shop_images/Logo_Sweets_aus_aller_Welt_druckdatei_Sticker.png",
+            "link_img": "/",
+            "img_width": 110,
+            "img_width_mb": 120,
+            "mgb": 10,
+            "mgb_mb": 10
+          }
+        },
+        "custom_text_7BgDNK": {
+          "type": "custom_text",
+          "settings": {
+            "text": "Nasch dich um die Welt.",
+            "remove_br_tag": false,
+            "tag": "p",
+            "fontf": "1",
+            "text_cl": "#ffffff",
+            "text_fs": 16,
+            "text_lh": 0,
+            "text_fw": 700,
+            "text_ls": 0,
+            "font_italic": false,
+            "text_shadow": false,
+            "text_mgb": 15,
+            "hidden_mobile": false,
+            "text_fs_mb": 16,
+            "text_lh_mb": 0,
+            "text_ls_mb": 0,
+            "text_mgb_mobile": 10
+          }
+        },
+        "bl_col_GKUATL": {
+          "type": "bl_col",
+          "settings": {
+            "col_heading": "Für dich da",
+            "menu": "f-r-dich-da",
+            "menu_style": "1",
+            "col_border": "none",
+            "col_dk": "2",
+            "col_tb": "6",
+            "col_mb": "12",
+            "content_align": "t4s-text-lg-start",
+            "padding_inner": "",
+            "content_align_tb": "t4s-text-md-start",
+            "padding_inner_tb": "",
+            "col_heading_mobile": "",
+            "content_align_mb": "t4s-text-center",
+            "padding_inner_mb": ""
+          }
+        },
+        "bl_col_j6W4Ch": {
+          "type": "bl_col",
+          "settings": {
+            "col_heading": "Werde Teil des Sweet Squad!",
+            "menu": "",
+            "menu_style": "1",
+            "col_border": "none",
+            "col_dk": "3",
+            "col_tb": "6",
+            "col_mb": "12",
+            "content_align": "t4s-text-lg-start",
+            "padding_inner": "",
+            "content_align_tb": "t4s-text-md-start",
+            "padding_inner_tb": "",
+            "col_heading_mobile": "",
+            "content_align_mb": "t4s-text-center",
+            "padding_inner_mb": ""
+          }
+        },
+        "custom_text_GUXFcX": {
+          "type": "custom_text",
+          "settings": {
+            "text": "Teile deinen süßen Moment mit #SweetsAusAllerWelt.",
+            "remove_br_tag": false,
+            "tag": "div",
+            "fontf": "2",
+            "text_cl": "#ffffff",
+            "text_fs": 14,
+            "text_lh": 20,
+            "text_fw": 400,
+            "text_ls": 0,
+            "font_italic": false,
+            "text_shadow": false,
+            "text_mgb": 15,
+            "hidden_mobile": false,
+            "text_fs_mb": 14,
+            "text_lh_mb": 20,
+            "text_ls_mb": 0,
+            "text_mgb_mobile": 15
+          }
+        },
+        "cus_socials_WJWkPe": {
+          "type": "cus_socials",
+          "settings": {
+            "title": "",
+            "social_mode": "1",
+            "social_style": "4",
+            "social_size": "small",
+            "bd_radius": 30,
+            "use_color_set": true,
+            "icon_cl": "#ffffff",
+            "bg_cl": "#16b9da",
+            "space_h_item": "5",
+            "space_v_item": "5",
+            "space_h_item_mb": "2",
+            "space_v_item_mb": "2"
+          }
+        },
+        "newsletter_sweets1": {
+          "type": "newsletter",
+          "settings": {
+            "form_width": 0,
+            "form_width_mb": 0,
+            "newl_des": "1"
+          }
+        },
+        "bl_col_HzXkKt": {
+          "type": "bl_col",
+          "settings": {
+            "col_heading": "Rechtliches",
+            "menu": "das-kleingedruckte-aber-wichtig",
+            "menu_style": "1",
+            "col_border": "none",
+            "col_dk": "2",
+            "col_tb": "6",
+            "col_mb": "12",
+            "content_align": "t4s-text-lg-start",
+            "padding_inner": "",
+            "content_align_tb": "t4s-text-md-start",
+            "padding_inner_tb": "",
+            "col_heading_mobile": "",
+            "content_align_mb": "t4s-text-center",
+            "padding_inner_mb": ""
+          }
+        },
+        "bl_col_shoppen": {
+          "type": "bl_col",
+          "settings": {
+            "col_heading": "Shoppen",
+            "menu": "",
+            "menu_style": "1",
+            "col_border": "none",
+            "col_dk": "2",
+            "col_tb": "6",
+            "col_mb": "12",
+            "content_align": "t4s-text-lg-start",
+            "padding_inner": "",
+            "content_align_tb": "t4s-text-md-start",
+            "padding_inner_tb": "",
+            "col_heading_mobile": "",
+            "content_align_mb": "t4s-text-center",
+            "padding_inner_mb": ""
+          }
+        },
+        "html_shoppen_links": {
+          "type": "collection_links",
+          "settings": {
+            "collections": [
+              "boxen",
+              "70-sale"
+            ],
+            "show_all": true
+          }
+        }
+      },
+      "block_order": [
+        "bl_col_x6ntyX",
+        "image_xBLybb",
+        "custom_text_7BgDNK",
+        "bl_col_shoppen",
+        "html_shoppen_links",
+        "bl_col_GKUATL",
+        "bl_col_j6W4Ch",
+        "custom_text_GUXFcX",
+        "cus_socials_WJWkPe",
+        "newsletter_sweets1",
+        "bl_col_HzXkKt"
+      ],
+      "settings": {
+        "placeholder_page": "widerrufsbelehrung",
+        "sticky": false,
+        "collapse": true,
+        "border_top": false,
+        "enable_follow_on_shop": false,
+        "border_pos": "in",
+        "space_h_item": "30",
+        "space_v_item": "30",
+        "space_h_item_tb": "30",
+        "space_v_item_tb": "30",
+        "space_h_item_mb": "30",
+        "space_v_item_mb": "30",
+        "heading_fontf": "1",
+        "heading_fs": 18,
+        "heading_lh": 22,
+        "heading_fw": 600,
+        "heading_ls": 0,
+        "mgb": 30,
+        "mgb_mb": 20,
+        "text_fs": 14,
+        "text_fw": 400,
+        "heading_cl": "#ffffff",
+        "text_cl": "#ffffff",
+        "link_cl": "#ffffff",
+        "link_hover_cl": "#f8ab14",
+        "link_active_cl": "#f8ab14",
+        "border_cl": "#ffffff",
+        "layout": "t4s-container-fluid",
+        "cl_bg": "#723a2b",
+        "cl_bg_gradient": "",
+        "mg": "",
+        "pd": "75px,,40px,",
+        "mg_tb": "",
+        "pd_tb": "75px,,75px,",
+        "mg_mb": "",
+        "pd_mb": "45px,,45px,"
+      }
+    },
+    "bottom": {
+      "type": "bottom-bar",
+      "blocks": {
+        "2433b4f1-5bdc-49a9-ba42-a51f4eb6d8e3": {
+          "type": "bl_col",
+          "settings": {
+            "col_heading": "",
+            "menu": "",
+            "col_dk": "12",
+            "col_tb": "12",
+            "col_mb": "12",
+            "content_align": "t4s-text-md-start",
+            "padding_inner": "",
+            "col_heading_mobile": "",
+            "content_align_mb": "t4s-text-center",
+            "padding_inner_mb": ""
+          }
+        },
+        "b3c6ceca-2d54-4a14-b482-bb86cbf25f08": {
+          "type": "copyR",
+          "settings": {
+            "text": "<style>\n    @media (min-width: 768px) {\n        .copyright-desktop {\n            margin-left: 40px;\n        }\n    }\n</style>\n\n<div class=\"copyright-desktop\">\n    Copyright © 2026 Sweets - aus aller Welt. Alle Rechte vorbehalten. | Webdesign &amp; Werbetexte von <a href=\"https://www.gentlegroup.de\" target=\"_blank\">Gentle Group</a> – <a href=\"https://www.gentlegroup.de\" target=\"_blank\" style=\"text-decoration: underline;\">jetzt ansehen</a>. 👋🏼\n</div>",
+            "mgb": 0,
+            "mgb_mb": 0
+          }
+        }
+      },
+      "block_order": [
+        "2433b4f1-5bdc-49a9-ba42-a51f4eb6d8e3",
+        "b3c6ceca-2d54-4a14-b482-bb86cbf25f08"
+      ],
+      "custom_css": [],
+      "settings": {
+        "hidden_bottombar": false,
+        "border_top": true,
+        "border_pos": "full",
+        "space_h_item": "0",
+        "space_v_item": "0",
+        "space_h_item_mb": "0",
+        "space_v_item_mb": "0",
+        "heading_fontf": "inherit",
+        "heading_fs": 16,
+        "heading_lh": 22,
+        "heading_fw": 500,
+        "heading_ls": 0,
+        "mgb": 30,
+        "mgb_mb": 20,
+        "text_fs": 14,
+        "text_fw": 400,
+        "heading_cl": "#ffffff",
+        "text_cl": "#ffffff",
+        "link_cl": "#ffffff",
+        "link_hover_cl": "#ffffff",
+        "border_cl": "#ffffff",
+        "layout": "t4s-container-fluid",
+        "cl_bg": "#603023",
+        "cl_bg_gradient": "",
+        "mg": "",
+        "pd": "10px,,10px,",
+        "mg_tb": "",
+        "pd_tb": "10px,,10px,",
+        "mg_mb": "",
+        "pd_mb": "10px,,10px,"
+      }
+    }
+  },
+  "order": [
+    "footer",
+    "bottom"
+  ]
+}

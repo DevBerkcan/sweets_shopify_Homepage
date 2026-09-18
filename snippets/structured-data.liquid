@@ -1,4 +1,9 @@
 {%- capture grich -%}
+{% if request.page_type == 'index' %}
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","name":{{ shop.name | json }},"url":{{ shop.url | json }}{% if settings.logo != blank %},"logo":{{ settings.logo | image_url: width: 600 | prepend: 'https:' | json }}{% endif %}}
+</script>
+{% endif %}
 {%- assign position = 1 %}
 <script type="application/ld+json">
   {

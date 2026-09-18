@@ -710,5 +710,47 @@
     "blog_excerpt": "Your store hasn’t published any blog posts yet. A blog can be used to talk about new product launches, tips, or other news you want to share with your customers. You can check out Shopify’s ecommerce blog for inspiration and advice for your own store and blog.",
     "blog_author": "Author name",
     "no_content": "This section doesn’t currently include any content. Add content to this section using the sidebar."
+  },
+"sweets": {
+    "guide": {
+    "interest": "1. What would you like to discover?",
+    "any": "Surprise me",
+    "next": "Continue",
+    "budget": "2. What is your budget?",
+    "any_budget": "Any budget",
+    "up_to": "Up to",
+    "available_only": "Available products only",
+    "back": "Back",
+    "show": "Show selection",
+    "empty": "No products match this selection right now. Change your budget or start again.",
+    "compare": "Compare",
+    "price": "Price",
+    "category": "Category",
+    "availability": "Availability",
+    "available": "Available",
+    "remove": "Remove",
+    "restart": "Start again",
+    "compare_help": "Select up to three products. Current individual prices are shown; select bundle offers on the product page. Missing product details are omitted.",
+    "count": "products selected",
+    "compare_empty": "Select Compare on a product to see it here.",
+    "clear": "Clear comparison"
+},
+  "view_all": "View all",
+  "select_products": "Select a collection or products.",
+  "about_collection": "About {{ title }}",
+  "collections": "Collections",
+  "finder_label": "Snack preferences",
+  "empty": "No products are currently available here.",
+  "reset": "Choose something else",
+  "all_products": "View all products",
+  "shipping": "Shipping and delivery",
+  "facts": {
+    "sorte": "Type",
+    "tuerchen": "Number of doors",
+    "masse": "Dimensions",
+    "inhaltstyp": "Contents",
+    "zubehoer": "Accessories",
+    "anlass": "Occasion"
   }
+}
 }

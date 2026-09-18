@@ -6,7 +6,11 @@
     assign accent_lightness     = settings.accent_color | color_extract: 'lightness'
  -%}
 
-  {%- if font_source == '2' -%}
+  {%- if settings.sweets_premium -%}
+    {%- assign font_1 = settings.fnt_fm_sp1 -%}
+    {%- assign font_2 = settings.fnt_fm_sp2 | default: font_1 -%}
+    {%- assign font_3 = settings.fnt_fm_sp3 | default: font_1 -%}
+  {%- elsif font_source == '2' -%}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
@@ -42,12 +46,14 @@
   {{- 'base.css' | asset_url | stylesheet_tag: preload: true -}}
   {%- if isRTL %}{{- 'theme_rtl.css' | asset_url | stylesheet_tag: preload: true -}}{% endif -%}
   {%- if settings.bootstrap_css %}{{- 'bootstrap.min.css' | asset_url | stylesheet_tag -}}{% endif -%}
+  {% unless settings.sweets_premium %}
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  {% endunless %}
   {{- 'sweets-design-system.css' | asset_url | stylesheet_tag: preload: true -}}
   {{- 'sweets-sections.css' | asset_url | stylesheet_tag: preload: true -}}
-  {{- 'sweets-refinements.css' | asset_url | stylesheet_tag -}}
+  {% unless settings.sweets_premium %}{{- 'sweets-refinements.css' | asset_url | stylesheet_tag -}}{% endunless %}
 
   {%- style -%}
 

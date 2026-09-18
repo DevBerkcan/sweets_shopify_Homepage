@@ -708,5 +708,47 @@
     "blog_excerpt": "Butikken din har ikke publisert noen blogginnlegg ennå. En blogg kan brukes til å snakke om nye produktlanseringer, tips eller annen nyheter du vil dele med kundene dine. Du kan sjekke ut Shopify's e-handelsblogg for inspirasjon og råd for din egen butikk og blogg.",
     "blog_author": "Forfatternavn",
     "no_content": "Denne delen inneholder for øyeblikket ingen innhold. Legg til innhold i denne delen ved å bruke sidefeltet."
+  },
+"sweets": {
+    "guide": {
+    "interest": "1. What would you like to discover?",
+    "any": "Surprise me",
+    "next": "Continue",
+    "budget": "2. What is your budget?",
+    "any_budget": "Any budget",
+    "up_to": "Up to",
+    "available_only": "Available products only",
+    "back": "Back",
+    "show": "Show selection",
+    "empty": "No products match this selection right now. Change your budget or start again.",
+    "compare": "Compare",
+    "price": "Price",
+    "category": "Category",
+    "availability": "Availability",
+    "available": "Available",
+    "remove": "Remove",
+    "restart": "Start again",
+    "compare_help": "Select up to three products. Current individual prices are shown; select bundle offers on the product page. Missing product details are omitted.",
+    "count": "products selected",
+    "compare_empty": "Select Compare on a product to see it here.",
+    "clear": "Clear comparison"
+},
+  "view_all": "Se alle",
+  "select_products": "Velg en kolleksjon eller produkter.",
+  "about_collection": "Om {{ title }}",
+  "collections": "Kolleksjoner",
+  "finder_label": "Snackspreferanser",
+  "empty": "Ingen produkter er tilgjengelige for øyeblikket.",
+  "reset": "Velg noe annet",
+  "all_products": "Se alle produkter",
+  "shipping": "Frakt og levering",
+  "facts": {
+    "sorte": "Type",
+    "tuerchen": "Antall luker",
+    "masse": "Mål",
+    "inhaltstyp": "Innhold",
+    "zubehoer": "Tilbehør",
+    "anlass": "Anledning"
   }
+}
 }

@@ -708,5 +708,47 @@
     "blog_excerpt": "Din butik har ännu inte publicerat några blogginlägg. En blogg kan användas för att prata om nya produktlanseringar, tips eller annan information du vill dela med dina kunder. Du kan kolla in Shopifys e-handelsblogg för inspiration och råd för din egen butik och blogg.",
     "blog_author": "Författarens namn",
     "no_content": "Detta avsnitt inkluderar för närvarande ingen innehåll. Lägg till innehåll i detta avsnitt med hjälp av sidofältet."
+  },
+"sweets": {
+    "guide": {
+    "interest": "1. What would you like to discover?",
+    "any": "Surprise me",
+    "next": "Continue",
+    "budget": "2. What is your budget?",
+    "any_budget": "Any budget",
+    "up_to": "Up to",
+    "available_only": "Available products only",
+    "back": "Back",
+    "show": "Show selection",
+    "empty": "No products match this selection right now. Change your budget or start again.",
+    "compare": "Compare",
+    "price": "Price",
+    "category": "Category",
+    "availability": "Availability",
+    "available": "Available",
+    "remove": "Remove",
+    "restart": "Start again",
+    "compare_help": "Select up to three products. Current individual prices are shown; select bundle offers on the product page. Missing product details are omitted.",
+    "count": "products selected",
+    "compare_empty": "Select Compare on a product to see it here.",
+    "clear": "Clear comparison"
+},
+  "view_all": "Visa alla",
+  "select_products": "Välj en kollektion eller produkter.",
+  "about_collection": "Om {{ title }}",
+  "collections": "Kollektioner",
+  "finder_label": "Snackspreferenser",
+  "empty": "Inga produkter är tillgängliga just nu.",
+  "reset": "Välj något annat",
+  "all_products": "Visa alla produkter",
+  "shipping": "Frakt och leverans",
+  "facts": {
+    "sorte": "Typ",
+    "tuerchen": "Antal luckor",
+    "masse": "Mått",
+    "inhaltstyp": "Innehåll",
+    "zubehoer": "Tillbehör",
+    "anlass": "Tillfälle"
   }
+}
 }

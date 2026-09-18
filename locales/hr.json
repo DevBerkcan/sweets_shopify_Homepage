@@ -717,5 +717,47 @@
     "blog_excerpt": "Vaša trgovina još nije objavila nijednu blog objavu. Blog se može koristiti za razgovor o lansiranju novih proizvoda, savjetima ili drugim vijestima koje želite podijeliti s kupcima. Za inspiraciju i savjete za svoju trgovinu i blog, možete pogledati Shopifyjev blog o elektroničkoj trgovini.",
     "blog_author": "Ime autora",
     "no_content": "Ovaj odjeljak trenutno ne sadrži nikakav sadržaj. Dodajte sadržaj u ovaj odjeljak koristeći bočnu traku."
+  },
+"sweets": {
+    "guide": {
+    "interest": "1. What would you like to discover?",
+    "any": "Surprise me",
+    "next": "Continue",
+    "budget": "2. What is your budget?",
+    "any_budget": "Any budget",
+    "up_to": "Up to",
+    "available_only": "Available products only",
+    "back": "Back",
+    "show": "Show selection",
+    "empty": "No products match this selection right now. Change your budget or start again.",
+    "compare": "Compare",
+    "price": "Price",
+    "category": "Category",
+    "availability": "Availability",
+    "available": "Available",
+    "remove": "Remove",
+    "restart": "Start again",
+    "compare_help": "Select up to three products. Current individual prices are shown; select bundle offers on the product page. Missing product details are omitted.",
+    "count": "products selected",
+    "compare_empty": "Select Compare on a product to see it here.",
+    "clear": "Clear comparison"
+},
+  "view_all": "Prikaži sve",
+  "select_products": "Odaberite kolekciju ili proizvode.",
+  "about_collection": "O kolekciji {{ title }}",
+  "collections": "Kolekcije",
+  "finder_label": "Omiljene grickalice",
+  "empty": "Trenutačno nema dostupnih proizvoda.",
+  "reset": "Odaberi nešto drugo",
+  "all_products": "Prikaži sve proizvode",
+  "shipping": "Dostava i isporuka",
+  "facts": {
+    "sorte": "Vrsta",
+    "tuerchen": "Broj prozorčića",
+    "masse": "Dimenzije",
+    "inhaltstyp": "Sadržaj",
+    "zubehoer": "Dodaci",
+    "anlass": "Prigoda"
   }
+}
 }

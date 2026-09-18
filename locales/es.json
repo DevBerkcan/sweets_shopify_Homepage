@@ -710,5 +710,47 @@
     "blog_excerpt": "Tu tienda aún no ha publicado ninguna entrada de blog. Un blog puede utilizarse para hablar sobre nuevos lanzamientos de productos, consejos u otras noticias que desees compartir con tus clientes. Puedes consultar el blog de comercio electrónico de Shopify para obtener inspiración y consejos para tu propia tienda y blog.",
     "blog_author": "Nombre del autor",
     "no_content": "Esta sección actualmente no incluye contenido alguno. Agrega contenido a esta sección usando la barra lateral."
+  },
+"sweets": {
+    "guide": {
+    "interest": "1. What would you like to discover?",
+    "any": "Surprise me",
+    "next": "Continue",
+    "budget": "2. What is your budget?",
+    "any_budget": "Any budget",
+    "up_to": "Up to",
+    "available_only": "Available products only",
+    "back": "Back",
+    "show": "Show selection",
+    "empty": "No products match this selection right now. Change your budget or start again.",
+    "compare": "Compare",
+    "price": "Price",
+    "category": "Category",
+    "availability": "Availability",
+    "available": "Available",
+    "remove": "Remove",
+    "restart": "Start again",
+    "compare_help": "Select up to three products. Current individual prices are shown; select bundle offers on the product page. Missing product details are omitted.",
+    "count": "products selected",
+    "compare_empty": "Select Compare on a product to see it here.",
+    "clear": "Clear comparison"
+},
+  "view_all": "Ver todo",
+  "select_products": "Selecciona una colección o productos.",
+  "about_collection": "Sobre {{ title }}",
+  "collections": "Colecciones",
+  "finder_label": "Preferencias de aperitivos",
+  "empty": "No hay productos disponibles actualmente.",
+  "reset": "Elegir otra opción",
+  "all_products": "Ver todos los productos",
+  "shipping": "Envío y entrega",
+  "facts": {
+    "sorte": "Tipo",
+    "tuerchen": "Número de ventanas",
+    "masse": "Dimensiones",
+    "inhaltstyp": "Contenido",
+    "zubehoer": "Accesorios",
+    "anlass": "Ocasión"
   }
+}
 }

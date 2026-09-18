@@ -709,5 +709,47 @@
     "blog_excerpt": "Uw winkel heeft nog geen blogberichten gepubliceerd. Een blog kan worden gebruikt om te praten over nieuwe productlanceringen, tips of ander nieuws dat u wilt delen met uw klanten. U kunt de ecommerce-blog van Shopify bekijken voor inspiratie en advies voor uw eigen winkel en blog.",
     "blog_author": "Auteur naam",
     "no_content": "Dit gedeelte bevat momenteel geen inhoud. Voeg inhoud toe aan dit gedeelte via de zijbalk."
+  },
+"sweets": {
+    "guide": {
+    "interest": "1. What would you like to discover?",
+    "any": "Surprise me",
+    "next": "Continue",
+    "budget": "2. What is your budget?",
+    "any_budget": "Any budget",
+    "up_to": "Up to",
+    "available_only": "Available products only",
+    "back": "Back",
+    "show": "Show selection",
+    "empty": "No products match this selection right now. Change your budget or start again.",
+    "compare": "Compare",
+    "price": "Price",
+    "category": "Category",
+    "availability": "Availability",
+    "available": "Available",
+    "remove": "Remove",
+    "restart": "Start again",
+    "compare_help": "Select up to three products. Current individual prices are shown; select bundle offers on the product page. Missing product details are omitted.",
+    "count": "products selected",
+    "compare_empty": "Select Compare on a product to see it here.",
+    "clear": "Clear comparison"
+},
+  "view_all": "Alles bekijken",
+  "select_products": "Selecteer een collectie of producten.",
+  "about_collection": "Over {{ title }}",
+  "collections": "Collecties",
+  "finder_label": "Snackvoorkeuren",
+  "empty": "Momenteel zijn er geen producten beschikbaar.",
+  "reset": "Kies iets anders",
+  "all_products": "Alle producten bekijken",
+  "shipping": "Verzending en bezorging",
+  "facts": {
+    "sorte": "Soort",
+    "tuerchen": "Aantal vakjes",
+    "masse": "Afmetingen",
+    "inhaltstyp": "Inhoud",
+    "zubehoer": "Accessoires",
+    "anlass": "Gelegenheid"
   }
+}
 }

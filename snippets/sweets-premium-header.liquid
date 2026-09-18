@@ -1,0 +1,8 @@
+<div class="t4s-header__wrapper sw-header" data-header-options='{ "isTransparent": false, "isSticky": {{ se_stts.sticky_header }}, "hideScroldown": {{ se_stts.scroll_header }} }'>
+  <div class="sw-header__inner" data-header-height>
+    <div class="sw-header__menu">{% render 'push_menu' %}</div>
+    <div class="sw-header__logo">{% render 't4s_logo', tag: 'div', isTransparent: false %}</div>
+    <div class="sw-header__navigation">{% render 'menu_blocks', admin_sp: admin_sp, se_blocks: se_blocks, se_stts: se_stts %}</div>
+    <div class="sw-header__actions">{% render 't4s_group_btns', se_stts: se_stts, isfrmSearch: true %}</div>
+  </div>
+</div>

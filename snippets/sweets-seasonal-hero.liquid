@@ -1,0 +1,70 @@
+{%- liquid
+  assign campaign = section.settings
+  assign campaign_product = campaign.campaign_product | default: campaign.collection.products.first
+  assign campaign_image = campaign.image | default: campaign_product.featured_image
+  assign mobile_image = campaign.image_mobile | default: campaign_image
+  assign image_alt = campaign_image.alt | default: campaign_product.title
+-%}
+<section class="sw-hero{% if campaign.use_theme_image %} sw-hero--photograph{% endif %}{% if campaign.use_reference_collage %} sw-hero--reference{% endif %}" aria-labelledby="hero-title-{{ section.id }}">
+  {%- if campaign.use_theme_image -%}
+    <img class="sw-hero__backdrop" src="{{ 'hero.png' | asset_img_url: '1600x' }}" srcset="{{ 'hero.png' | asset_img_url: '750x' }} 750w, {{ 'hero.png' | asset_img_url: '1100x' }} 1100w, {{ 'hero.png' | asset_img_url: '1600x' }} 1600w" sizes="100vw" width="1672" height="941" alt="" loading="eager" fetchpriority="{% if campaign.use_reference_collage %}low{% else %}high{% endif %}">
+  {%- endif -%}
+  <div class="sweets-container sw-hero__inner">
+    <div class="sw-hero__copy">
+      {% if campaign.eyebrow != blank %}<p class="sw-eyebrow">{{ campaign.eyebrow | escape }}</p>{% endif %}
+      <h1 id="hero-title-{{ section.id }}">{{ campaign.heading | escape }}{% if campaign.accent_heading != blank %}<span>{{ campaign.accent_heading | escape }}</span>{% endif %}</h1>
+      {% if campaign.subheading != blank %}<p class="sw-hero__description">{{ campaign.subheading | escape }}</p>{% endif %}
+      <div class="sw-hero__buttons">
+        {% if campaign.primary_cta_link != blank and campaign.primary_cta_label != blank %}<a class="sweets-btn sweets-btn--primary" href="{{ campaign.primary_cta_link }}">{{ campaign.primary_cta_label | escape }} <span aria-hidden="true">↗</span></a>{% endif %}
+        {% if campaign.secondary_cta_link != blank and campaign.secondary_cta_label != blank %}<a class="sweets-btn sweets-btn--secondary" href="{{ campaign.secondary_cta_link }}">{{ campaign.secondary_cta_label | escape }}</a>{% endif %}
+      </div>
+    </div>
+    {% if campaign.use_reference_collage %}
+      <div class="sw-hero__gallery sw-hero__gallery--collage">
+        <div class="sw-hero__main-image">
+          {% if campaign.image != blank %}
+            {{ campaign.image | image_url: width: 800 | image_tag: widths: '400,600,800', sizes: '(min-width: 750px) 28vw, 55vw', loading: 'eager', fetchpriority: 'high', alt: campaign.image.alt }}
+          {% else %}
+            <img src="{{ 'sweets-campaign-tea.png' | asset_img_url: '600x' }}" srcset="{{ 'sweets-campaign-tea.png' | asset_img_url: '400x' }} 400w, {{ 'sweets-campaign-tea.png' | asset_img_url: '600x' }} 600w, {{ 'sweets-campaign-tea.png' | asset_img_url: '800x' }} 800w" sizes="(min-width: 750px) 28vw, 55vw" width="1500" height="1500" alt="Tee aus aller Welt – Adventskalender" loading="eager" fetchpriority="high">
+          {% endif %}
+        </div>
+        {% for index in (1..2) %}
+          {% liquid
+            assign image_key = 'image_secondary_' | append: index
+            assign secondary_image = campaign[image_key]
+            assign fallback_asset = 'sweets-campaign-matcha.jpg'
+            assign fallback_alt = 'Matcha-Adventskalender'
+            if index == 2
+              assign fallback_asset = 'sweets-campaign-world.jpg'
+              assign fallback_alt = 'Sweets aus aller Welt – Adventskalender'
+            endif
+          %}
+          <div class="sw-hero__small-image">
+            {% if secondary_image != blank %}
+              {{ secondary_image | image_url: width: 500 | image_tag: widths: '250,400,500', sizes: '(min-width: 750px) 18vw, 35vw', loading: 'eager' }}
+            {% else %}
+              <img src="{{ fallback_asset | asset_img_url: '400x' }}" srcset="{{ fallback_asset | asset_img_url: '250x' }} 250w, {{ fallback_asset | asset_img_url: '500x' }} 500w" sizes="(min-width: 750px) 18vw, 35vw" width="500" height="500" alt="{{ fallback_alt | escape }}" loading="eager">
+            {% endif %}
+          </div>
+        {% endfor %}
+      </div>
+    {% elsif campaign.use_theme_image == false %}
+      {% if campaign_image != blank %}
+        <div class="sw-hero__gallery{% if campaign.image_secondary_1 != blank or campaign.image_secondary_2 != blank %} sw-hero__gallery--collage{% endif %}">
+          <div class="sw-hero__main-image">
+            <picture>
+              {% if mobile_image != blank %}<source media="(max-width: 749px)" srcset="{{ mobile_image | image_url: width: 400 }} 400w, {{ mobile_image | image_url: width: 700 }} 700w" sizes="90vw">{% endif %}
+              {{ campaign_image | image_url: width: 1000 | image_tag: widths: '400,600,800,1000', sizes: '(min-width: 1200px) 600px, (min-width: 750px) 45vw, 90vw', loading: 'eager', fetchpriority: 'high', alt: image_alt }}
+            </picture>
+          </div>
+          {% for index in (1..2) %}
+            {% assign image_key = 'image_secondary_' | append: index %}
+            {% assign secondary_image = campaign[image_key] %}
+            {% if secondary_image != blank %}<div class="sw-hero__small-image">{{ secondary_image | image_url: width: 500 | image_tag: widths: '250,400,500', sizes: '(min-width: 750px) 18vw, 40vw', loading: 'eager' }}</div>{% endif %}
+          {% endfor %}
+          {% if campaign.collage_tag != blank %}<span class="sw-hero__caption">{{ campaign.collage_tag | escape }}</span>{% endif %}
+        </div>
+      {% endif %}
+    {% endif %}
+  </div>
+</section>

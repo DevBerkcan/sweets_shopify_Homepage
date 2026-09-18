@@ -717,5 +717,47 @@
     "blog_excerpt": "A sua loja ainda não publicou nenhuma publicação no blogue. Um blogue pode ser utilizado para falar sobre novos lançamentos de produtos, dicas ou outras notícias que deseja partilhar com os seus clientes. Pode consultar o blogue de ecommerce da Shopify para inspiração e conselhos para a sua própria loja e blogue.",
     "blog_author": "Nome do autor",
     "no_content": "Esta secção não inclui atualmente nenhum conteúdo. Adicione conteúdo a esta secção utilizando a barra lateral."
+  },
+"sweets": {
+    "guide": {
+    "interest": "1. What would you like to discover?",
+    "any": "Surprise me",
+    "next": "Continue",
+    "budget": "2. What is your budget?",
+    "any_budget": "Any budget",
+    "up_to": "Up to",
+    "available_only": "Available products only",
+    "back": "Back",
+    "show": "Show selection",
+    "empty": "No products match this selection right now. Change your budget or start again.",
+    "compare": "Compare",
+    "price": "Price",
+    "category": "Category",
+    "availability": "Availability",
+    "available": "Available",
+    "remove": "Remove",
+    "restart": "Start again",
+    "compare_help": "Select up to three products. Current individual prices are shown; select bundle offers on the product page. Missing product details are omitted.",
+    "count": "products selected",
+    "compare_empty": "Select Compare on a product to see it here.",
+    "clear": "Clear comparison"
+},
+  "view_all": "Ver tudo",
+  "select_products": "Selecione uma coleção ou produtos.",
+  "about_collection": "Sobre {{ title }}",
+  "collections": "Coleções",
+  "finder_label": "Preferências de snacks",
+  "empty": "Não existem produtos disponíveis de momento.",
+  "reset": "Escolher outra opção",
+  "all_products": "Ver todos os produtos",
+  "shipping": "Envio e entrega",
+  "facts": {
+    "sorte": "Tipo",
+    "tuerchen": "Número de janelas",
+    "masse": "Dimensões",
+    "inhaltstyp": "Conteúdo",
+    "zubehoer": "Acessórios",
+    "anlass": "Ocasião"
   }
+}
 }

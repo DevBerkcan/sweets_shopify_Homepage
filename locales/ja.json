@@ -708,5 +708,47 @@
     "blog_excerpt": "あなたの店舗はまだブログ投稿を公開していません。ブログは新商品の発売、ヒント、その他のお知らせを顧客と共有するために使用できます。Shopifyのeコマースブログでインスピレーションやアドバイスを得ることができます。",
     "blog_author": "著者名",
     "no_content": "このセクションには現在コンテンツが含まれていません。サイドバーを使用してこのセクションにコンテンツを追加します。"
+  },
+"sweets": {
+    "guide": {
+    "interest": "1. What would you like to discover?",
+    "any": "Surprise me",
+    "next": "Continue",
+    "budget": "2. What is your budget?",
+    "any_budget": "Any budget",
+    "up_to": "Up to",
+    "available_only": "Available products only",
+    "back": "Back",
+    "show": "Show selection",
+    "empty": "No products match this selection right now. Change your budget or start again.",
+    "compare": "Compare",
+    "price": "Price",
+    "category": "Category",
+    "availability": "Availability",
+    "available": "Available",
+    "remove": "Remove",
+    "restart": "Start again",
+    "compare_help": "Select up to three products. Current individual prices are shown; select bundle offers on the product page. Missing product details are omitted.",
+    "count": "products selected",
+    "compare_empty": "Select Compare on a product to see it here.",
+    "clear": "Clear comparison"
+},
+  "view_all": "すべて見る",
+  "select_products": "コレクションまたは商品を選択してください。",
+  "about_collection": "{{ title }}について",
+  "collections": "コレクション",
+  "finder_label": "お菓子の好み",
+  "empty": "現在、商品はありません。",
+  "reset": "別のものを選ぶ",
+  "all_products": "すべての商品を見る",
+  "shipping": "配送とお届け",
+  "facts": {
+    "sorte": "種類",
+    "tuerchen": "窓の数",
+    "masse": "サイズ",
+    "inhaltstyp": "内容",
+    "zubehoer": "付属品",
+    "anlass": "用途"
   }
+}
 }

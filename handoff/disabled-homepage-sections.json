@@ -1,0 +1,975 @@
+{
+  "collections_list_simple_CKdxbV": {
+    "type": "collections-list-simple",
+    "disabled": true,
+    "blocks": {
+      "collection_item_MgVDq7": {
+        "type": "collection_item",
+        "settings": {
+          "collection": "70-sale",
+          "collection_title": "70% SALE 🎁",
+          "collection_link": ""
+        }
+      },
+      "collection_item_xGPJYf": {
+        "type": "collection_item",
+        "settings": {
+          "collection": "bestseller-boxen",
+          "collection_title": "Bestseller🔥",
+          "collection_link": ""
+        }
+      },
+      "collection_item_tCHyrx": {
+        "type": "collection_item",
+        "settings": {
+          "collection": "usa-boxen",
+          "collection_title": "USA 🍫",
+          "collection_link": ""
+        }
+      },
+      "collection_item_3RKX7B": {
+        "type": "collection_item",
+        "settings": {
+          "collection": "asia-boxen",
+          "collection_title": "ASIA 🌏",
+          "collection_link": ""
+        }
+      },
+      "collection_item_AYVUmg": {
+        "type": "collection_item",
+        "settings": {
+          "collection": "vegane-boxen",
+          "collection_title": "VEGANE ☘️",
+          "collection_link": ""
+        }
+      }
+    },
+    "block_order": [
+      "collection_item_MgVDq7",
+      "collection_item_xGPJYf",
+      "collection_item_tCHyrx",
+      "collection_item_3RKX7B",
+      "collection_item_AYVUmg"
+    ],
+    "custom_css": [
+      ".flickityt4s-button-icon {display: none !important;}"
+    ],
+    "settings": {
+      "title_cl": "#ffffff",
+      "title_cl_hover": "#f8ab14",
+      "open_link": "_self",
+      "space_item_dk": 70,
+      "space_item_tb": 35,
+      "space_item_mb": 25,
+      "layout": "t4s-container-wrap",
+      "cl_bg": "#16b9da",
+      "cl_bg_gradient": "",
+      "mg": ",,50px,",
+      "pd": "",
+      "mg_tb": "",
+      "pd_tb": "1px,,1px,",
+      "mg_mb": ",,30px,",
+      "pd_mb": "1px,,1px,"
+    }
+  },
+  "slideshow_6d6TG4": {
+    "type": "slideshow",
+    "disabled": true,
+    "blocks": {
+      "image_parent_69ARAe": {
+        "type": "image_parent",
+        "settings": {
+          "image": "shopify://shop_images/Teasergrafik-maennchen_1.jpg",
+          "image_mb": "shopify://shop_images/Zugeschnitten_Bild_Sara.png",
+          "image_position": "8",
+          "cl_img": "",
+          "link_img1": "",
+          "open_link": "_blank",
+          "animate_slide": "none",
+          "text_align": "center",
+          "text_align_mb": "center",
+          "content_width": "auto",
+          "cv_pos": 100,
+          "ch_pos": 50,
+          "cv_pos_mb": 0,
+          "ch_pos_mb": 0,
+          "bg_overlay": "#000000",
+          "bg_opacity": 0,
+          "bg_content_cl": "#ffffff",
+          "bg_content_op": 0,
+          "content_radius": 0,
+          "box_square": false,
+          "content_pd_tb": 15,
+          "content_pd_lr": 15,
+          "content_pd_tb_tb": 15,
+          "content_pd_lr_tb": 15,
+          "content_pd_tb_mb": 10,
+          "content_pd_lr_mb": 10,
+          "border_bl": false,
+          "br_color": "#222222",
+          "br_bg": "#ffffff",
+          "br_opacity": 50,
+          "br_style": "solid",
+          "br_pd": 20,
+          "br_pd_mb": 10,
+          "time_animation": 1,
+          "animation_delay": 40
+        }
+      }
+    },
+    "block_order": [
+      "image_parent_69ARAe"
+    ],
+    "custom_css": [],
+    "settings": {
+      "se_height": "t4s_ratioadapt",
+      "custom_dk": false,
+      "height_dk": 600,
+      "custom_tb": false,
+      "height_tb": 400,
+      "custom_mb": false,
+      "height_mb": 700,
+      "eff": "slide",
+      "loop": false,
+      "au_time": 0,
+      "au_hover": false,
+      "nav_btn": false,
+      "btn_vi": "hover",
+      "btn_owl": "default",
+      "btn_icon": "0",
+      "btn_shape": "none",
+      "btn_cl": "dark",
+      "btn_size": "small",
+      "btn_hidden_mobile": false,
+      "nav_dot": false,
+      "dot_owl": "default",
+      "dots_position": "default",
+      "dots_cl": "dark",
+      "dots_round": false,
+      "dots_space": 10,
+      "dots_hidden_mobile": false,
+      "layout": "t4s-container-fluid",
+      "cl_bg": "",
+      "cl_bg_gradient": "",
+      "mg": "70px",
+      "pd": "",
+      "mg_tb": "70px",
+      "pd_tb": "",
+      "mg_mb": "50px",
+      "pd_mb": "",
+      "use_cus_css": false,
+      "code_cus_css": ""
+    }
+  },
+  "custom_section_j6Xwd8": {
+    "type": "custom-section",
+    "disabled": true,
+    "blocks": {
+      "bl_col_idzAMe": {
+        "type": "bl_col",
+        "settings": {
+          "col_dk": "12",
+          "col_tb": "12",
+          "col_mb": "12",
+          "align_vertical": false,
+          "content_align": "center",
+          "content_align_tablet": "center",
+          "content_align_mobile": "center",
+          "padding_inner": "0px",
+          "padding_inner_tb": "",
+          "padding_inner_mb": "",
+          "bg_cl": "#ffffff"
+        }
+      },
+      "custom_button_7AM7dY": {
+        "type": "custom_button",
+        "settings": {
+          "button_text": "ALLE PRODUKTE",
+          "button_link": "shopify://collections/all",
+          "target_link": "_self",
+          "fontf": "2",
+          "button_icon_w": 0,
+          "button_style": "default",
+          "button_effect": "sweep-to-right",
+          "pri_cl": "#f8ab14",
+          "second_cl": "#ffffff",
+          "pri_cl_hover": "#56cfe1",
+          "second_cl_hover": "#ffffff",
+          "fsbutton": 16,
+          "fwbutton": 400,
+          "button_ls": 0,
+          "button_mh": 42,
+          "button_bdr": 12,
+          "button_pd_lr": 30,
+          "button_mgb": 0,
+          "hidden_mobile": false,
+          "button_icon_w_mb": 0,
+          "fsbutton_mb": 14,
+          "button_mh_mb": 42,
+          "button_pd_lr_mb": 30,
+          "button_ls_mb": 0,
+          "button_mgb_mb": 5
+        }
+      },
+      "custom_button_mKChGz": {
+        "type": "custom_button",
+        "settings": {
+          "button_text": "SWEETS BOXEN",
+          "button_link": "shopify://collections/bestseller-boxen",
+          "target_link": "_self",
+          "fontf": "2",
+          "button_icon_w": 0,
+          "button_style": "default",
+          "button_effect": "sweep-to-right",
+          "pri_cl": "#16b9da",
+          "second_cl": "#ffffff",
+          "pri_cl_hover": "#f8ab14",
+          "second_cl_hover": "#ffffff",
+          "fsbutton": 16,
+          "fwbutton": 400,
+          "button_ls": 0,
+          "button_mh": 42,
+          "button_bdr": 12,
+          "button_pd_lr": 30,
+          "button_mgb": 0,
+          "hidden_mobile": false,
+          "button_icon_w_mb": 0,
+          "fsbutton_mb": 14,
+          "button_mh_mb": 42,
+          "button_pd_lr_mb": 30,
+          "button_ls_mb": 0,
+          "button_mgb_mb": 5
+        }
+      }
+    },
+    "block_order": [
+      "bl_col_idzAMe",
+      "custom_button_7AM7dY",
+      "custom_button_mKChGz"
+    ],
+    "custom_css": [
+      "@media (min-width: 768px) {.t4s-w-100 {position: relative; bottom: 20px; }}",
+      "@media (max-width: 767px) {.t4s-w-100 {position: relative; bottom: 20px; }}"
+    ],
+    "settings": {
+      "space_h_item": "30",
+      "space_v_item": "30",
+      "space_h_item_mb": "10",
+      "space_v_item_mb": "10",
+      "layout": "t4s-container-fluid",
+      "cl_bg": "",
+      "cl_bg_gradient": "",
+      "mg": ",,50px,",
+      "pd": "",
+      "mg_tb": ",,50px,",
+      "pd_tb": "",
+      "mg_mb": ",,30px,",
+      "pd_mb": "",
+      "use_cus_css": false,
+      "code_cus_css": ""
+    }
+  },
+  "collection_products_banner2_kjL6Gz": {
+    "type": "collection-products-banner2",
+    "custom_css": [
+      ".t4s-title {font-size: clamp(24px, 5vw, 30px);}",
+      "@media (max-width: 767px) {.t4s-top-heading {display: flex; flex-direction: column; gap: 16px; justify-content: space-between; align-items: flex-start; width: 100%; flex-wrap: nowrap; } .t4s-head-btn a {font-size: clamp(16px, 4vw, 20px); white-space: nowrap; } .t4s-head-btn a {white-space: nowrap; }}"
+    ],
+    "settings": {
+      "top_heading": "Deine nächsten Lieblingssnacks",
+      "heading_height": 1,
+      "tophead_mb": 40,
+      "head_btn_label": "Zur Kategorie",
+      "head_btn_url": "shopify://collections/bestseller-boxen",
+      "head_btn_icon": true,
+      "head_btn_style": "outline",
+      "head_btn_size": "medium",
+      "head_btn_cl": "custom1",
+      "head_btn_effect": "sweep-to-right",
+      "head_btn_hidden_mb": false,
+      "collection": "bestseller-boxen",
+      "product_des": "6",
+      "show_vendor": false,
+      "use_cdt": false,
+      "image_ratio": "ratio1_1",
+      "image_size": "contain",
+      "image_position": "8",
+      "content_align": "default",
+      "limit": 4,
+      "col_dk": "4",
+      "col_tb": "2",
+      "col_mb": "2",
+      "space_h_item": "30",
+      "space_v_item": "30",
+      "space_h_item_mb": "20",
+      "space_v_item_mb": "10",
+      "layout_des": "1",
+      "banner_pos": "left",
+      "loop": false,
+      "au_time": 0,
+      "au_hover": false,
+      "nav_btn": false,
+      "slide_btn_pos": "default",
+      "btn_vi": "hover",
+      "btn_owl": "default",
+      "btn_shape": "none",
+      "btn_cl": "dark",
+      "btn_size": "small",
+      "btn_hidden_mobile": true,
+      "nav_dot": false,
+      "dot_owl": "default",
+      "dots_position": "default",
+      "dots_cl": "dark",
+      "dots_round": false,
+      "dots_space": 10,
+      "dots_bottom_pos": 20,
+      "dots_hidden_mobile": false,
+      "viewall_btn": false,
+      "btn_icon": false,
+      "button_style": "outline",
+      "btns_size": "extra-medium",
+      "btns_cl": "custom1",
+      "button_effect": "sweep-to-right",
+      "btn_pos": "t4s-text-end",
+      "layout": "t4s-container-wrap",
+      "cl_bg": "",
+      "cl_bg_gradient": "",
+      "mg": "70px",
+      "pd": "",
+      "mg_tb": "70px",
+      "pd_tb": "",
+      "mg_mb": "50px",
+      "pd_mb": "",
+      "use_cus_css": false,
+      "code_cus_css": ""
+    },
+    "disabled": true
+  },
+  "collection_products_banner2_GtH7CW": {
+    "type": "collection-products-banner2",
+    "custom_css": [
+      ".t4s-title {font-size: clamp(24px, 5vw, 30px);}",
+      "@media (max-width: 767px) {.t4s-top-heading {display: flex; flex-direction: column; gap: 16px; justify-content: space-between; align-items: flex-start; width: 100%; flex-wrap: nowrap; } .t4s-head-btn a {font-size: clamp(16px, 4vw, 20px); white-space: nowrap; } .t4s-head-btn a {white-space: nowrap; }}"
+    ],
+    "settings": {
+      "top_heading": "Weitere Entdeckungen",
+      "heading_height": 1,
+      "tophead_mb": 40,
+      "head_btn_label": "Zur Kategorie",
+      "head_btn_url": "shopify://collections/usa-boxen",
+      "head_btn_icon": true,
+      "head_btn_style": "outline",
+      "head_btn_size": "medium",
+      "head_btn_cl": "custom1",
+      "head_btn_effect": "sweep-to-right",
+      "head_btn_hidden_mb": false,
+      "collection": "usa-boxen",
+      "product_des": "6",
+      "show_vendor": false,
+      "use_cdt": false,
+      "image_ratio": "ratio1_1",
+      "image_size": "contain",
+      "image_position": "8",
+      "content_align": "default",
+      "limit": 4,
+      "col_dk": "4",
+      "col_tb": "2",
+      "col_mb": "2",
+      "space_h_item": "30",
+      "space_v_item": "30",
+      "space_h_item_mb": "20",
+      "space_v_item_mb": "10",
+      "layout_des": "1",
+      "banner_pos": "left",
+      "loop": false,
+      "au_time": 0,
+      "au_hover": false,
+      "nav_btn": false,
+      "slide_btn_pos": "default",
+      "btn_vi": "hover",
+      "btn_owl": "default",
+      "btn_shape": "none",
+      "btn_cl": "dark",
+      "btn_size": "small",
+      "btn_hidden_mobile": true,
+      "nav_dot": false,
+      "dot_owl": "default",
+      "dots_position": "default",
+      "dots_cl": "dark",
+      "dots_round": false,
+      "dots_space": 10,
+      "dots_bottom_pos": 20,
+      "dots_hidden_mobile": false,
+      "viewall_btn": false,
+      "btn_icon": false,
+      "button_style": "outline",
+      "btns_size": "extra-medium",
+      "btns_cl": "custom1",
+      "button_effect": "sweep-to-right",
+      "btn_pos": "t4s-text-center",
+      "layout": "t4s-container-wrap",
+      "cl_bg": "",
+      "cl_bg_gradient": "",
+      "mg": "70px",
+      "pd": "",
+      "mg_tb": "70px",
+      "pd_tb": "",
+      "mg_mb": "50px",
+      "pd_mb": "",
+      "use_cus_css": false,
+      "code_cus_css": ""
+    },
+    "disabled": true
+  },
+  "top_heading_pFJ8g7": {
+    "type": "top_heading",
+    "blocks": {
+      "bl_heading_UwDehK": {
+        "type": "bl_heading",
+        "settings": {
+          "top_heading": "Über 50.000 zufriedene Kunden 🤩"
+        }
+      },
+      "bl_subheading_43hy8t": {
+        "type": "bl_subheading",
+        "settings": {
+          "top_subheading": "Geliebt auf TikTok, Instagram und mehr – schließ dich der Community an!"
+        }
+      }
+    },
+    "block_order": [
+      "bl_heading_UwDehK",
+      "bl_subheading_43hy8t"
+    ],
+    "custom_css": [
+      "h3 {font-size: 30px; font-weight: 600;}",
+      ".t4s-title {color: #16b9da;}",
+      ".t4s-heading-icon__line-wave {margin-bottom: 30px;}",
+      ".t4s-subtitle {margin-bottom: 40px;}"
+    ],
+    "settings": {
+      "design_heading": "16",
+      "heading_align": "t4s-text-start",
+      "layout": "t4s-container-wrap",
+      "cl_bg": "",
+      "cl_bg_gradient": "",
+      "mg": "60px",
+      "pd": "",
+      "mg_tb": "60px",
+      "pd_tb": "",
+      "mg_mb": "40px",
+      "pd_mb": "",
+      "use_cus_css": true,
+      "code_cus_css": ".t4s-heading-icon__line-wave path {\n    stroke: #723a2b;\n}"
+    },
+    "disabled": true
+  },
+  "top_heading_4eNdUc": {
+    "type": "top_heading",
+    "blocks": {
+      "bl_heading_N6eAkF": {
+        "type": "bl_heading",
+        "settings": {
+          "top_heading": "Nasche dich Biss für Biss um die Welt"
+        }
+      },
+      "bl_subheading_maGcWj": {
+        "type": "bl_subheading",
+        "settings": {
+          "top_subheading": "Von den lebhaften Straßen Tokios bis zu den sonnigen Stränden Kaliforniens – ‚Sweets aus aller Welt‘ bringt dir die süßesten Highlights und geheimsten Favoriten aus über 20 Ländern direkt nach Hause.\n\nUnsere Leckereien stehen für Genuss, Vielfalt und Abenteuer: Entdecke exotische Süßigkeiten, die du noch nie probiert hast, und Klassiker, die du immer wieder lieben wirst.\n\nManchmal reicht ein kleiner Moment, um den Alltag besonders zu machen – lass uns deinen Tag ein bisschen süßer machen, mit Sweets, die begeistern."
+        }
+      }
+    },
+    "block_order": [
+      "bl_heading_N6eAkF",
+      "bl_subheading_maGcWj"
+    ],
+    "disabled": true,
+    "custom_css": [
+      "h3 {font-size: 30px; font-weight: 700;}",
+      ".t4s-title {color: #16b9da;}",
+      ".t4s-heading-icon__line-wave {margin-bottom: 30px;}"
+    ],
+    "settings": {
+      "design_heading": "16",
+      "heading_align": "t4s-text-center",
+      "layout": "t4s-container-wrap",
+      "cl_bg": "",
+      "cl_bg_gradient": "",
+      "mg": "60px",
+      "pd": "",
+      "mg_tb": "60px",
+      "pd_tb": "",
+      "mg_mb": "40px",
+      "pd_mb": "",
+      "use_cus_css": true,
+      "code_cus_css": ".t4s-heading-icon__line-wave path {\n    stroke: #723a2b;\n}"
+    }
+  },
+  "collection_products_banner2_CgPBhj": {
+    "type": "collection-products-banner2",
+    "disabled": true,
+    "custom_css": [
+      ".t4s-title {font-size: clamp(24px, 5vw, 30px);}",
+      "@media (max-width: 767px) {.t4s-top-heading {display: flex; flex-direction: column; gap: 16px; justify-content: space-between; align-items: flex-start; width: 100%; flex-wrap: nowrap; } .t4s-head-btn a {font-size: clamp(16px, 4vw, 20px); white-space: nowrap; } .t4s-head-btn a {white-space: nowrap; }}"
+    ],
+    "settings": {
+      "top_heading": "ASIA Boxen 🌏",
+      "heading_height": 1,
+      "tophead_mb": 40,
+      "head_btn_label": "Zur Kategorie",
+      "head_btn_url": "shopify://collections/asia-boxen",
+      "head_btn_icon": true,
+      "head_btn_style": "outline",
+      "head_btn_size": "medium",
+      "head_btn_cl": "custom1",
+      "head_btn_effect": "sweep-to-right",
+      "head_btn_hidden_mb": false,
+      "collection": "asia-boxen",
+      "product_des": "6",
+      "show_vendor": false,
+      "use_cdt": false,
+      "image_ratio": "ratio1_1",
+      "image_size": "cover",
+      "image_position": "8",
+      "content_align": "default",
+      "limit": 8,
+      "col_dk": "4",
+      "col_tb": "2",
+      "col_mb": "2",
+      "space_h_item": "30",
+      "space_v_item": "30",
+      "space_h_item_mb": "20",
+      "space_v_item_mb": "10",
+      "layout_des": "2",
+      "banner_pos": "left",
+      "loop": false,
+      "au_time": 0,
+      "au_hover": false,
+      "nav_btn": false,
+      "slide_btn_pos": "default",
+      "btn_vi": "hover",
+      "btn_owl": "default",
+      "btn_shape": "none",
+      "btn_cl": "dark",
+      "btn_size": "small",
+      "btn_hidden_mobile": true,
+      "nav_dot": false,
+      "dot_owl": "default",
+      "dots_position": "default",
+      "dots_cl": "dark",
+      "dots_round": false,
+      "dots_space": 10,
+      "dots_bottom_pos": 20,
+      "dots_hidden_mobile": false,
+      "viewall_btn": false,
+      "btn_icon": false,
+      "button_style": "outline",
+      "btns_size": "extra-medium",
+      "btns_cl": "custom1",
+      "button_effect": "sweep-to-right",
+      "btn_pos": "t4s-text-center",
+      "layout": "t4s-container-wrap",
+      "cl_bg": "",
+      "cl_bg_gradient": "",
+      "mg": "70px",
+      "pd": "",
+      "mg_tb": "70px",
+      "pd_tb": "",
+      "mg_mb": "50px",
+      "pd_mb": "",
+      "use_cus_css": false,
+      "code_cus_css": ""
+    }
+  },
+  "collection_products_banner2_hR3GXq": {
+    "type": "collection-products-banner2",
+    "disabled": true,
+    "custom_css": [
+      ".t4s-title {font-size: clamp(24px, 5vw, 30px);}",
+      "@media (max-width: 767px) {.t4s-top-heading {display: flex; flex-direction: column; gap: 16px; justify-content: space-between; align-items: flex-start; width: 100%; flex-wrap: nowrap; } .t4s-head-btn a {font-size: clamp(15px, 4vw, 20px); white-space: nowrap; } .t4s-head-btn a {white-space: nowrap; }}"
+    ],
+    "settings": {
+      "top_heading": "VEGANE Boxen ☘️",
+      "heading_height": 1,
+      "tophead_mb": 40,
+      "head_btn_label": "Zur Kategorie",
+      "head_btn_url": "shopify://collections/vegane-boxen",
+      "head_btn_icon": true,
+      "head_btn_style": "outline",
+      "head_btn_size": "medium",
+      "head_btn_cl": "custom1",
+      "head_btn_effect": "sweep-to-right",
+      "head_btn_hidden_mb": false,
+      "collection": "vegane-boxen",
+      "product_des": "6",
+      "show_vendor": false,
+      "use_cdt": false,
+      "image_ratio": "ratio1_1",
+      "image_size": "cover",
+      "image_position": "8",
+      "content_align": "default",
+      "limit": 8,
+      "col_dk": "4",
+      "col_tb": "2",
+      "col_mb": "2",
+      "space_h_item": "30",
+      "space_v_item": "30",
+      "space_h_item_mb": "20",
+      "space_v_item_mb": "10",
+      "layout_des": "2",
+      "banner_pos": "left",
+      "loop": false,
+      "au_time": 0,
+      "au_hover": false,
+      "nav_btn": false,
+      "slide_btn_pos": "default",
+      "btn_vi": "hover",
+      "btn_owl": "default",
+      "btn_shape": "none",
+      "btn_cl": "dark",
+      "btn_size": "small",
+      "btn_hidden_mobile": true,
+      "nav_dot": false,
+      "dot_owl": "default",
+      "dots_position": "default",
+      "dots_cl": "dark",
+      "dots_round": false,
+      "dots_space": 10,
+      "dots_bottom_pos": 20,
+      "dots_hidden_mobile": false,
+      "viewall_btn": false,
+      "btn_icon": false,
+      "button_style": "outline",
+      "btns_size": "extra-medium",
+      "btns_cl": "custom1",
+      "button_effect": "sweep-to-right",
+      "btn_pos": "t4s-text-center",
+      "layout": "t4s-container-wrap",
+      "cl_bg": "",
+      "cl_bg_gradient": "",
+      "mg": "70px",
+      "pd": "",
+      "mg_tb": "70px",
+      "pd_tb": "",
+      "mg_mb": "50px",
+      "pd_mb": "",
+      "use_cus_css": false,
+      "code_cus_css": ""
+    }
+  },
+  "shipping_rMdYPq": {
+    "type": "shipping",
+    "blocks": {
+      "shipping_F3CWaP": {
+        "type": "shipping",
+        "settings": {
+          "icon_themes": "car",
+          "icon": "las la-globe-europe",
+          "title": "Snacks, die dich finden, bevor du sie suchst.",
+          "text": "<p>Unsere Auswahl ist so bunt wie dein Geschmack – immer neu, immer überraschend und genau das Richtige für dein nächstes Snack-Abenteuer.</p>",
+          "html": ""
+        }
+      },
+      "shipping_XEq3kV": {
+        "type": "shipping",
+        "settings": {
+          "icon_themes": "help",
+          "icon": "las la-grin-tongue-squint",
+          "title": "Immer ein Grund zum Staunen.",
+          "text": "<p>Jede Lieferung ist wie ein Geschenk an dich selbst. Mit Überraschungen, die du nicht erwartet hast, aber immer lieben wirst.</p>",
+          "html": ""
+        }
+      },
+      "shipping_eLtx6D": {
+        "type": "shipping",
+        "settings": {
+          "icon_themes": "refesh",
+          "icon": "las la-candy-cane",
+          "title": "Süßer wird’s nicht – versprochen.",
+          "text": "<p>Mit über 50.000 zufriedenen Kunden sind wir deine erste Wahl für internationale Leckereien. Vertraue dem Geschmack, der verführt – ein Biss reicht.</p>",
+          "html": ""
+        }
+      }
+    },
+    "block_order": [
+      "shipping_F3CWaP",
+      "shipping_XEq3kV",
+      "shipping_eLtx6D"
+    ],
+    "settings": {
+      "design_heading": "1",
+      "heading_align": "t4s-text-center",
+      "top_heading": "",
+      "icon_heading": "las la-gem",
+      "top_subheading": "",
+      "tophead_mb": 30,
+      "content_align": "text-center",
+      "align_vertical": false,
+      "design_padding": "1",
+      "source": "line_awe",
+      "icon_des": "circle",
+      "icon_size": "small",
+      "col_dk": "3",
+      "col_tb": "3",
+      "col_mb": "1",
+      "border": false,
+      "cl_bd": "#dddddd",
+      "cl_ic": "#16b9da",
+      "cl_hd": "#f8ab14",
+      "cl_cot": "#723a2b",
+      "bg_item": "#ffffff",
+      "hd_fs": 16,
+      "hd_fw": 600,
+      "txt_fs": 14,
+      "space_h_item": "30",
+      "space_v_item": "30",
+      "space_h_item_mb": "10",
+      "space_v_item_mb": "10",
+      "carousel_mobile": true,
+      "dots_cl": "primary",
+      "dots_round": true,
+      "layout": "t4s-container-wrap",
+      "cl_bg": "",
+      "cl_bg_gradient": "",
+      "mg": "80px",
+      "pd": "",
+      "mg_tb": "80px",
+      "pd_tb": "",
+      "mg_mb": "60px",
+      "pd_mb": "",
+      "use_cus_css": false,
+      "code_cus_css": ""
+    },
+    "disabled": true
+  },
+  "scrolling_text_nUAmey": {
+    "type": "scrolling-text",
+    "blocks": {
+      "item_kcQkwp": {
+        "type": "item",
+        "settings": {
+          "content": "<p><strong>Egal, was du liebst, wir haben es hier, Süßes und Snacks direkt zu dir</strong></p>"
+        }
+      }
+    },
+    "block_order": [
+      "item_kcQkwp"
+    ],
+    "custom_css": [],
+    "settings": {
+      "speed": 30,
+      "direction": "ltr",
+      "pause_when_hover": false,
+      "adding_border": false,
+      "cl": "#ffffff",
+      "cl_bg": "#ffffff",
+      "cl_bg_gradient": "linear-gradient(320deg, rgba(248, 171, 20, 1) 50%, rgba(22, 185, 218, 1) 50%)",
+      "mg": "70px",
+      "pd": "10px,,10px",
+      "mg_tb": "70px",
+      "pd_tb": "10px,,10px",
+      "mg_mb": "50px",
+      "pd_mb": "10px,,10px"
+    },
+    "disabled": true
+  },
+  "sweets_box_compare_1": {
+    "type": "sweets-box-compare",
+    "settings": {
+      "heading": "Welcher Kalender passt zu dir?",
+      "text": ""
+    },
+    "blocks": {
+      "compare_tee": {
+        "type": "compared_box",
+        "settings": {
+          "product": "deine-tee-weltreise-mit-24-tees-aus-aller-welt-tee-adventskalender-inklusive-herkunftsgeschichte-zu-allen-tees-weihnachtskalender-2025-mit-fruchtetee-krautertee-gewurztee-mehr-xl",
+          "theme_label": "Tee",
+          "content_type": "fixed"
+        }
+      },
+      "compare_ramadan": {
+        "type": "compared_box",
+        "settings": {
+          "product": "ramadan-kalender-2026",
+          "theme_label": "Ramadan",
+          "content_type": "undocumented"
+        }
+      },
+      "compare_empty": {
+        "type": "compared_box",
+        "settings": {
+          "product": "",
+          "theme_label": "",
+          "content_type": "undocumented"
+        }
+      }
+    },
+    "block_order": [
+      "compare_tee",
+      "compare_ramadan",
+      "compare_empty"
+    ],
+    "disabled": true
+  },
+  "sweets_snack_finder_1": {
+    "type": "sweets-snack-finder",
+    "blocks": {
+      "finder_bestseller": {
+        "type": "finder_option",
+        "settings": {
+          "label": "Bestseller",
+          "collection": "bestseller-boxen",
+          "reason": "Unsere Bestseller-Boxen entdecken und neue Lieblingssorten finden."
+        }
+      },
+      "finder_usa": {
+        "type": "finder_option",
+        "settings": {
+          "label": "USA-Style",
+          "collection": "usa-boxen",
+          "reason": "Klassiker und Kultmarken aus den USA."
+        }
+      },
+      "finder_asia": {
+        "type": "finder_option",
+        "settings": {
+          "label": "Asia-Style",
+          "collection": "asia-boxen",
+          "reason": "Snacks und Süßigkeiten aus Japan, Korea und weiteren asiatischen Ländern."
+        }
+      },
+      "finder_vegan": {
+        "type": "finder_option",
+        "settings": {
+          "label": "Vegan",
+          "collection": "vegane-boxen",
+          "reason": "Rein pflanzliche Auswahl."
+        }
+      },
+      "finder_sale": {
+        "type": "finder_option",
+        "settings": {
+          "label": "Zeig mir Angebote",
+          "collection": "70-sale",
+          "reason": "Aktuell reduzierte Snacks."
+        }
+      }
+    },
+    "block_order": [
+      "finder_bestseller",
+      "finder_usa",
+      "finder_asia",
+      "finder_vegan",
+      "finder_sale"
+    ],
+    "settings": {
+      "heading": "Worauf hast du heute Lust?",
+      "fallback_link": "/collections/all"
+    },
+    "disabled": true
+  },
+  "sweets_category_navigator_1": {
+    "type": "sweets-category-navigator",
+    "blocks": {
+      "format_boxen": {
+        "type": "format_option",
+        "settings": {
+          "collection": "sweet-home",
+          "label": "Boxen",
+          "description": "Mehrere Sorten, ein Preis"
+        }
+      },
+      "format_einzeln": {
+        "type": "format_option",
+        "settings": {
+          "collection": "",
+          "label": "",
+          "description": ""
+        }
+      },
+      "origin_usa": {
+        "type": "origin_option",
+        "settings": {
+          "collection": "usa-boxen",
+          "label": "USA",
+          "description": "American Candy & Cookies"
+        }
+      },
+      "origin_asien": {
+        "type": "origin_option",
+        "settings": {
+          "collection": "asia-boxen",
+          "label": "Asien",
+          "description": "Japan · Korea · Vietnam"
+        }
+      },
+      "origin_dubai": {
+        "type": "origin_option",
+        "settings": {
+          "collection": "",
+          "label": "",
+          "description": ""
+        }
+      }
+    },
+    "block_order": [
+      "format_boxen",
+      "format_einzeln",
+      "origin_usa",
+      "origin_asien",
+      "origin_dubai"
+    ],
+    "settings": {
+      "heading": "Wo willst du heute naschen?",
+      "subheading": "American Candy oder Snacks aus Asien? Entdecke deine nächste Lieblingsbox."
+    },
+    "disabled": true
+  },
+  "sweets_advent_calendar_1": {
+    "type": "sweets-advent-calendar",
+    "blocks": {
+      "calendar_1": {
+        "type": "calendar_item",
+        "settings": {
+          "product": "deine-tee-weltreise-mit-24-tees-aus-aller-welt-tee-adventskalender-inklusive-herkunftsgeschichte-zu-allen-tees-weihnachtskalender-2025-mit-fruchtetee-krautertee-gewurztee-mehr-xl"
+        }
+      },
+      "calendar_2": {
+        "type": "calendar_item",
+        "settings": {
+          "product": "ramadan-kalender-2026"
+        }
+      },
+      "calendar_3": {
+        "type": "calendar_item",
+        "settings": {
+          "product": ""
+        }
+      }
+    },
+    "block_order": [
+      "calendar_1",
+      "calendar_2",
+      "calendar_3"
+    ],
+    "settings": {
+      "heading": "24 Türchen statt einer Box",
+      "text": "Zwei echte Kalender aus unserem Sortiment – jeder mit eigenem Schwerpunkt.",
+      "all_link": ""
+    },
+    "disabled": true
+  },
+  "sweets_usa_products": {
+    "type": "sweets-featured-products",
+    "settings": {
+      "eyebrow": "Einmal über den Atlantik",
+      "heading": "Ein Stück USA für zu Hause",
+      "collection": "usa-boxen",
+      "limit": 4,
+      "spacing": 64
+    },
+    "disabled": true
+  }
+}

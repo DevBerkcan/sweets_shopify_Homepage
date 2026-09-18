@@ -1,3 +1,6 @@
+{% if settings.sweets_premium %}
+{% render 'sweets-seasonal-hero', section: section %}
+{% else %}
 <!-- sections/sweets-hero.liquid -->
 {%- liquid
   assign se_stts = section.settings
@@ -121,15 +124,50 @@
   </div>
 </section>
 
+{% endif %}
 {% schema %}
 {
   "name": "Sweets Hero",
   "tag": "section",
   "class": "sweets-hero-section",
   "settings": [
-    { "type": "checkbox", "id": "use_theme_image", "label": "Mitgelieferte hero.png verwenden", "default": false, "info": "Verwendet assets/hero.png statt der unten ausgewählten Bilder." },
-    { "type": "text", "id": "eyebrow", "label": "Kleine Überschrift", "default": "Kleine Box. Große Welt." },
-    { "type": "collection", "id": "collection", "label": "Hero-Produkte", "info": "Ohne Hauptbild wird das erste Produkt dieser Kollektion gezeigt." },
+    {
+      "type": "checkbox",
+      "id": "use_reference_collage",
+      "label": "Bildcollage aus dem Shop-Entwurf",
+      "default": false,
+      "info": "Zeigt die drei mitgelieferten Kampagnenmotive. Die Bildauswahl unten ersetzt einzelne Motive. hero.png kann zusätzlich als Hintergrund verwendet werden."
+    },
+    {
+      "type": "product",
+      "id": "campaign_product",
+      "label": "Kampagnenprodukt",
+      "info": "Wird als Hauptbild verwendet, wenn kein Bild gewählt ist."
+    },
+    {
+      "type": "text",
+      "id": "accent_heading",
+      "label": "Goldene zweite Überschrift"
+    },
+    {
+      "type": "checkbox",
+      "id": "use_theme_image",
+      "label": "Mitgelieferte hero.png verwenden",
+      "default": false,
+      "info": "Verwendet assets/hero.png als Hintergrund. Mit aktivierter Bildcollage erscheinen die ausgewählten Bilder zusätzlich."
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Kleine Überschrift",
+      "default": "Kleine Box. Große Welt."
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Hero-Produkte",
+      "info": "Ohne Hauptbild wird das erste Produkt dieser Kollektion gezeigt."
+    },
     {
       "type": "text",
       "id": "heading",
@@ -208,4 +246,3 @@
   ]
 }
 {% endschema %}
-

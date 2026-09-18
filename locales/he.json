@@ -766,5 +766,47 @@
     "blog_excerpt": "החנות שלך עדיין לא פרסמה פוסטים בבלוג. ניתן להשתמש בבלוג לדברים כמו השקת מוצרים חדשים, טיפים או חדשות נוספות שברצונך לשתף עם הלקוחות שלך. ניתן לבדוק את בלוג המסחר האלקטרוני של Shopify להשראה ולטיפים לחנויות ולבלוגים.",
     "blog_author": "שם המחבר",
     "no_content": "האזור הזה אינו כולל כרגע תוכן. ניתן להוסיף תוכן לאזור זה באמצעות הסרגל."
+  },
+"sweets": {
+    "guide": {
+    "interest": "1. What would you like to discover?",
+    "any": "Surprise me",
+    "next": "Continue",
+    "budget": "2. What is your budget?",
+    "any_budget": "Any budget",
+    "up_to": "Up to",
+    "available_only": "Available products only",
+    "back": "Back",
+    "show": "Show selection",
+    "empty": "No products match this selection right now. Change your budget or start again.",
+    "compare": "Compare",
+    "price": "Price",
+    "category": "Category",
+    "availability": "Availability",
+    "available": "Available",
+    "remove": "Remove",
+    "restart": "Start again",
+    "compare_help": "Select up to three products. Current individual prices are shown; select bundle offers on the product page. Missing product details are omitted.",
+    "count": "products selected",
+    "compare_empty": "Select Compare on a product to see it here.",
+    "clear": "Clear comparison"
+},
+  "view_all": "הצגת הכול",
+  "select_products": "יש לבחור קולקציה או מוצרים.",
+  "about_collection": "על {{ title }}",
+  "collections": "קולקציות",
+  "finder_label": "העדפות חטיפים",
+  "empty": "אין מוצרים זמינים כרגע.",
+  "reset": "בחירת אפשרות אחרת",
+  "all_products": "הצגת כל המוצרים",
+  "shipping": "משלוח ואספקה",
+  "facts": {
+    "sorte": "סוג",
+    "tuerchen": "מספר החלונות",
+    "masse": "מידות",
+    "inhaltstyp": "תכולה",
+    "zubehoer": "אביזרים",
+    "anlass": "אירוע"
   }
+}
 }

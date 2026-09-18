@@ -1,0 +1,10 @@
+{%- capture facts -%}
+  {% assign keys = 'sorte,tuerchen,masse,inhaltstyp,zubehoer,anlass' | split: ',' %}
+  {% for key in keys %}
+    {% assign fact = product.metafields.kalender[key] %}
+    {% assign label_key = 'sweets.facts.' | append: key %}
+    {% if fact != blank %}<div><dt>{{ label_key | t }}</dt><dd>{{ fact | metafield_tag }}</dd></div>{% endif %}
+  {% endfor %}
+{%- endcapture -%}
+{% assign trimmed_facts = facts | strip %}
+{% if trimmed_facts != blank %}<dl class="sw-facts">{{ facts }}</dl>{% endif %}

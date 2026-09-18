@@ -5,6 +5,9 @@
   if bk_stts.show_dynamic_checkout and isExternal == false and isProductAvailable
     assign PR_buy_pr = true
   endif
+  if settings.sweets_kaching
+    assign PR_buy_pr = false
+  endif
   assign choose_an_option = 'products.product.choose_an_option' | t
   assign date_in = settings.date_in
   assign class_frm = 't4s-form__product has--form__swatch'
@@ -221,6 +224,9 @@
           {%- render 'gift-card-recipient-form', product: product, form: form, section: section -%}
         </div>
       {%- endif -%}
+      {% if settings.sweets_kaching and type == 'main' and isExternal == false %}
+        <kaching-bundle product-id="{{ product.id }}"></kaching-bundle>
+      {% endif %}
       <div class="t4s-product-form__buttons" style="--pr-btn-round:{{ bk_stts.pr_btn_round }}px;">
         <div class="t4s-d-flex t4s-flex-wrap">
           {%- if isExternal -%}

@@ -213,7 +213,10 @@
   }
 {%- endstyle -%}
 
-<div data-header-options='{ "isTransparent": {{ h_transparent }},"isSticky": {{ se_stts.sticky_header }},"hideScroldown": {{ se_stts.scroll_header }} }' class="t4s-header__wrapper t4s-pr t4s-layout-layout_bottom{% if h__bgimg != blank %} lazyloadt4s t4s-header__bgimg" data-bgset="{{ h__bgimg | image_url: width: 1 }}" data-ratio="{{ h__bgimg.aspect_ratio }}" data-sizes="auto"{% else %}"{% endif %}>
+{% if settings.sweets_premium %}
+  {% render 'sweets-premium-header', se_stts: se_stts, se_blocks: se_blocks, admin_sp: admin_sp %}
+{% else %}
+<div data-header-options='{ "isTransparent": {{ h_transparent }},"isSticky": {{ se_stts.sticky_header }},"hideScroldown": {{ se_stts.scroll_header }} }' class="t4s-header__wrapper t4s-pr t4s-layout-layout_bottom{% if h__bgimg != blank %} lazyloadt4s t4s-header__bgimg{% endif %}" {% if h__bgimg != blank %}data-bgset="{{ h__bgimg | image_url: width: 1 }}" data-ratio="{{ h__bgimg.aspect_ratio }}" data-sizes="auto"{% endif %}>
     <div class="t4s-container">
         <div class="t4s-section-header__mid">
         	{%- if source != '4' -%}
@@ -249,7 +252,8 @@
     </div>
 </div>
 
-{%- if h_transparent -%}
+{% endif %}
+{%- if h_transparent and settings.sweets_premium != true -%}
 <script>
 document.documentElement.classList.add('is--header-transparent');
 document.documentElement.style.setProperty('--header-height', document.getElementById('shopify-section-{{ section.id }}').offsetHeight + 'px');

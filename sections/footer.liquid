@@ -55,11 +55,15 @@
                             <div class="t4s-footer-menu t4s-footer-menu-style{{ bk_stts.menu_style }}" style="--menu-mgb:{{ bk_stts.mgb }}px;--menu-mgb-mb:{{ bk_stts.mgb_mb }}px;">
                             <ul class="t4s-footer-linklist">
                                 {%- for link in bk_stts.menu.links -%}
+                                {% assign footer_link_url = link.url %}
+                                {% if footer_link_url == '#' or footer_link_url == blank %}{% assign footer_link_url = section.settings.placeholder_page.url %}{% endif %}
+                                {% if footer_link_url != blank %}
                                 <li>
-                                    <a href="{{ link.url }}" class="t4s-footer-link {% if link.current %}t4s-footer-link-active{% endif %}" {% if link.current%}  aria-current="page" {% endif %}>
+                                    <a href="{{ footer_link_url }}" class="t4s-footer-link {% if link.current %}t4s-footer-link-active{% endif %}" {% if link.current%}  aria-current="page" {% endif %}>
                                     {{ link.title | escape }}
                                     </a>
                                 </li>
+                                {% endif %}
                                 {%- endfor -%} 
                             </ul>
                             </div> 
@@ -96,6 +100,7 @@
   "tag": "section",
   "class": "t4s-section t4s-section-footer t4s_tp_cdt t4s-footer",
   "settings": [
+    {"type":"page","id":"placeholder_page","label":"Ziel für leere Menülinks","info":"Optionaler Ersatz für Menülinks ohne Ziel oder mit #. Ohne Auswahl werden solche Links ausgeblendet."},
     {
       "type": "header",
       "content": "1. Advance options"
@@ -642,7 +647,7 @@
       "placeholder": ",,50px,"
     }
   ],
-  "blocks": [
+  "blocks": [{"type":"collection_links","name":"Shop-Collections","settings":[{"type":"collection_list","id":"collections","label":"Collections","limit":8},{"type":"checkbox","id":"show_all","label":"Link zu allen Produkten","default":true}]},
     {
       "type": "bl_col",
       "name": "Col (Parent)",

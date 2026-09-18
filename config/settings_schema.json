@@ -2693,5 +2693,48 @@
         "content": "[Install EcomRise (Free)](https:\/\/apps.shopify.com\/ecomrise?utm_source=ecomus-intheme&utm_medium=import-demo-theme-settings) to import new demos and update the latest theme version quickly. Plus, access to all boost sales features. [Install app now.](https:\/\/apps.shopify.com\/ecomrise?utm_source=ecomus-intheme&utm_medium=import-demo-theme-settings)"
       }
     ]
-  }
+  },
+{
+  "name": "Sweets Design",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "sweets_premium",
+      "label": "Gestaltung aus dem Shop-Entwurf aktivieren",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "sweets_kaching",
+      "label": "Kaching Bundles vorbereiten",
+      "default": true,
+      "info": "Platziert das offizielle Widget im Haupt-Produktformular. Kaching-App-Embed und Angebote müssen in Shopify aktiviert sein. Keine zusätzliche manuelle Widget-Platzierung verwenden."
+    },
+    {
+      "type": "checkbox",
+      "id": "sweets_offer_product_page",
+      "label": "Angebote auf der Produktseite auswählen",
+      "default": true,
+      "info": "Produktkarten öffnen die Produktseite statt Schnellkauf. Empfohlen für Bundles und Abos, damit keine Angebotsauswahl übersprungen wird."
+    },
+    {
+      "type": "color",
+      "id": "sweets_paper",
+      "label": "Creme",
+      "default": "#fffdf8"
+    },
+    {
+      "type": "color",
+      "id": "sweets_pine",
+      "label": "Tannengrün",
+      "default": "#14392f"
+    },
+    {
+      "type": "color",
+      "id": "sweets_gold",
+      "label": "Gold",
+      "default": "#e3c868"
+    }
+  ]
+}
 ]

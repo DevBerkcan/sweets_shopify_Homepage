@@ -1,4 +1,7 @@
 <div class="{% if section.settings.include_margins %}t4s-container{% endif %}"{% if settings.animations_reveal_on_scroll %} hdt-reveal="fade-in"{% endif %}>
+  {% if section.settings.heading != blank %}
+    <h2 class="sweets-section-heading sw-app-heading">{{ section.settings.heading | escape }}</h2>
+  {% endif %}
   {%- for block in section.blocks -%}
     {%- render block -%}
   {%- endfor -%}
@@ -10,6 +13,11 @@
   "tag": "section",
   "class": "section",
   "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Überschrift"
+    },
     {
       "type": "checkbox",
       "id": "include_margins",

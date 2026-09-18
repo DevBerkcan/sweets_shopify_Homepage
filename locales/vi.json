@@ -717,5 +717,47 @@
     "blog_excerpt": "Cửa hàng của bạn chưa đăng bất kỳ bài viết nào trên blog. Một blog có thể được sử dụng để nói về các sản phẩm mới, mẹo hoặc tin tức khác mà bạn muốn chia sẻ với khách hàng của mình. Bạn có thể kiểm tra blog thương mại điện tử của Shopify để có ý tưởng và lời khuyên cho cửa hàng và blog của riêng bạn.",
     "blog_author": "Tên tác giả",
     "no_content": "Phần này hiện không có nội dung nào. Thêm nội dung vào phần này bằng cách sử dụng thanh bên."
+  },
+"sweets": {
+    "guide": {
+    "interest": "1. What would you like to discover?",
+    "any": "Surprise me",
+    "next": "Continue",
+    "budget": "2. What is your budget?",
+    "any_budget": "Any budget",
+    "up_to": "Up to",
+    "available_only": "Available products only",
+    "back": "Back",
+    "show": "Show selection",
+    "empty": "No products match this selection right now. Change your budget or start again.",
+    "compare": "Compare",
+    "price": "Price",
+    "category": "Category",
+    "availability": "Availability",
+    "available": "Available",
+    "remove": "Remove",
+    "restart": "Start again",
+    "compare_help": "Select up to three products. Current individual prices are shown; select bundle offers on the product page. Missing product details are omitted.",
+    "count": "products selected",
+    "compare_empty": "Select Compare on a product to see it here.",
+    "clear": "Clear comparison"
+},
+  "view_all": "Xem tất cả",
+  "select_products": "Chọn bộ sưu tập hoặc sản phẩm.",
+  "about_collection": "Về {{ title }}",
+  "collections": "Bộ sưu tập",
+  "finder_label": "Sở thích đồ ăn vặt",
+  "empty": "Hiện chưa có sản phẩm.",
+  "reset": "Chọn lựa khác",
+  "all_products": "Xem tất cả sản phẩm",
+  "shipping": "Vận chuyển và giao hàng",
+  "facts": {
+    "sorte": "Loại",
+    "tuerchen": "Số ô cửa",
+    "masse": "Kích thước",
+    "inhaltstyp": "Thành phần bên trong",
+    "zubehoer": "Phụ kiện",
+    "anlass": "Dịp"
   }
+}
 }

@@ -197,7 +197,7 @@ assign use_link_vendor = settings.use_link_vendor
 assign isSticky = false
 assign isStickyMB = false
 assign sticky_mode = se_stts.sticky_mode
-if sticky_mode != '0' and isGrouped == false and isProductAvailable and settings.atc_ajax_enable
+if sticky_mode != '0' and isGrouped == false and isProductAvailable and settings.atc_ajax_enable and settings.sweets_kaching == false
    assign isSticky = true
    if sticky_mode == '2'
    assign isStickyMB = true
@@ -541,6 +541,8 @@ endif -%}
                     }
                   </script>
 
+                {%- when 'sweets_facts' -%}
+                  <div {{ block.shopify_attributes }}>{% render 'sweets-product-facts', product: product %}</div>
                 {%- when 'form' -%}
                   {%- liquid
                     assign product_list = bk_stts.product_list
@@ -1787,7 +1789,7 @@ endif -%}
       "default": 6
     }
   ],
-  "blocks": [
+  "blocks": [{"type":"sweets_facts","name":"Kalender-Informationen","limit":1,"settings":[]},
     {
       "type": "@app"
     },

@@ -708,5 +708,47 @@
     "blog_excerpt": "Il tuo negozio non ha ancora pubblicato alcun post sul blog. Un blog può essere utilizzato per parlare di nuovi lanci di prodotti, consigli o altre novità che desideri condividere con i tuoi clienti. Puoi ispirarti e ottenere consigli per il tuo negozio e blog nell'ecommerce blog di Shopify.",
     "blog_author": "Nome dell'autore",
     "no_content": "Questa sezione non include attualmente alcun contenuto. Aggiungi contenuto a questa sezione utilizzando la barra laterale."
+  },
+"sweets": {
+    "guide": {
+    "interest": "1. What would you like to discover?",
+    "any": "Surprise me",
+    "next": "Continue",
+    "budget": "2. What is your budget?",
+    "any_budget": "Any budget",
+    "up_to": "Up to",
+    "available_only": "Available products only",
+    "back": "Back",
+    "show": "Show selection",
+    "empty": "No products match this selection right now. Change your budget or start again.",
+    "compare": "Compare",
+    "price": "Price",
+    "category": "Category",
+    "availability": "Availability",
+    "available": "Available",
+    "remove": "Remove",
+    "restart": "Start again",
+    "compare_help": "Select up to three products. Current individual prices are shown; select bundle offers on the product page. Missing product details are omitted.",
+    "count": "products selected",
+    "compare_empty": "Select Compare on a product to see it here.",
+    "clear": "Clear comparison"
+},
+  "view_all": "Vedi tutto",
+  "select_products": "Seleziona una collezione o dei prodotti.",
+  "about_collection": "Informazioni su {{ title }}",
+  "collections": "Collezioni",
+  "finder_label": "Preferenze degli snack",
+  "empty": "Nessun prodotto attualmente disponibile.",
+  "reset": "Scegli altro",
+  "all_products": "Vedi tutti i prodotti",
+  "shipping": "Spedizione e consegna",
+  "facts": {
+    "sorte": "Tipo",
+    "tuerchen": "Numero di finestrelle",
+    "masse": "Dimensioni",
+    "inhaltstyp": "Contenuto",
+    "zubehoer": "Accessori",
+    "anlass": "Occasione"
   }
+}
 }

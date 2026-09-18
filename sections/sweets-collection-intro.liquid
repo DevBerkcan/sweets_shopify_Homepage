@@ -1,0 +1,11 @@
+<div class="sweets-container sw-collection-intro">
+  <h1>{{ collection.title | escape }}</h1>
+  {% if section.settings.show_description and collection.description != blank %}
+    {% if collection.description.size > 650 %}
+      <details class="sw-collection-description"><summary>{{ 'sweets.about_collection' | t: title: collection.title }}</summary><div class="t4s-rte">{{ collection.description }}</div></details>
+    {% else %}<div class="t4s-rte">{{ collection.description }}</div>{% endif %}
+  {% endif %}
+</div>
+{% schema %}
+{"name":"Sweets Kategorie-Intro","settings":[{"type":"checkbox","id":"show_description","label":"Collection-Beschreibung anzeigen","default":true}],"enabled_on":{"templates":["collection"]},"presets":[{"name":"Sweets Kategorie-Intro"}]}
+{% endschema %}

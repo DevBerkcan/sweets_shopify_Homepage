@@ -717,5 +717,47 @@
     "blog_excerpt": "您的店铺尚未发布任何博客文章。博客可用于讨论新产品发布、提示或其他要与客户分享的新闻。您可以查看Shopify的电子商务博客，获取有关为自己的店铺和博客获取灵感和建议的信息。",
     "blog_author": "作者姓名",
     "no_content": "此部分当前不包含任何内容。使用侧边栏添加内容到此部分。"
+  },
+"sweets": {
+    "guide": {
+    "interest": "1. What would you like to discover?",
+    "any": "Surprise me",
+    "next": "Continue",
+    "budget": "2. What is your budget?",
+    "any_budget": "Any budget",
+    "up_to": "Up to",
+    "available_only": "Available products only",
+    "back": "Back",
+    "show": "Show selection",
+    "empty": "No products match this selection right now. Change your budget or start again.",
+    "compare": "Compare",
+    "price": "Price",
+    "category": "Category",
+    "availability": "Availability",
+    "available": "Available",
+    "remove": "Remove",
+    "restart": "Start again",
+    "compare_help": "Select up to three products. Current individual prices are shown; select bundle offers on the product page. Missing product details are omitted.",
+    "count": "products selected",
+    "compare_empty": "Select Compare on a product to see it here.",
+    "clear": "Clear comparison"
+},
+  "view_all": "查看全部",
+  "select_products": "请选择系列或产品。",
+  "about_collection": "关于{{ title }}",
+  "collections": "产品系列",
+  "finder_label": "零食偏好",
+  "empty": "目前没有可用产品。",
+  "reset": "选择其他选项",
+  "all_products": "查看所有产品",
+  "shipping": "运输与配送",
+  "facts": {
+    "sorte": "类型",
+    "tuerchen": "小窗数量",
+    "masse": "尺寸",
+    "inhaltstyp": "内容",
+    "zubehoer": "配件",
+    "anlass": "适用场合"
   }
+}
 }

@@ -1,0 +1,44 @@
+{%- liquid
+  assign selected_collection = section.settings.collection
+  assign products = section.settings.products
+  if selected_collection != blank
+    assign products = selected_collection.products
+  endif
+-%}
+{% if products.size > 0 or request.design_mode %}
+<section id="{{ section.settings.anchor | default: section.id | handleize }}" class="sw-featured" aria-labelledby="featured-title-{{ section.id }}" style="--sw-section-space:{{ section.settings.spacing }}px">
+  <div class="sweets-container">
+    <div class="sw-section-head">
+      <div>
+        {% if section.settings.eyebrow != blank %}<p class="sw-eyebrow">{{ section.settings.eyebrow | escape }}</p>{% endif %}
+        <h2 class="sweets-section-heading" id="featured-title-{{ section.id }}">{{ section.settings.heading | default: selected_collection.title | escape }}</h2>
+        {% if section.settings.text != blank %}<p>{{ section.settings.text | escape }}</p>{% endif %}
+      </div>
+      {% if selected_collection != blank %}<a class="sw-text-link" href="{{ selected_collection.url }}">{{ 'sweets.view_all' | t }} <span aria-hidden="true">↗</span></a>{% endif %}
+    </div>
+    <div class="sw-product-grid{% if products.size == 1 %} sw-product-grid--single{% endif %} t4s-products t4s_ratio1_1 t4s_contain t4s_position_8" data-not-main data-ntajax-options='{"id":"{{ section.id }}","type":"AjaxDefault","isProduct":true}'>
+      {% for product in products limit: section.settings.limit %}
+        {% render 'product-grid-item6', product: product, imgatt: 'data-', show_vendor: false, enable_rating: settings.enable_rating, app_review: settings.app_review, price_varies_style: settings.price_varies_style, show_img: settings.show_img %}
+      {% else %}
+        {% if request.design_mode %}<p>{{ 'sweets.select_products' | t }}</p>{% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+{% schema %}
+{
+  "name": "Sweets Produktauswahl",
+  "settings": [
+    {"type":"text","id":"eyebrow","label":"Kleine Überschrift"},
+    {"type":"text","id":"heading","label":"Überschrift","default":"Besondere Entdeckungen"},
+    {"type":"textarea","id":"text","label":"Beschreibung"},
+    {"type":"text","id":"anchor","label":"Sprungmarke (optional)","info":"Eindeutig pro Seite, ohne #. Zum Beispiel kalender für einen Button-Link #kalender."},
+    {"type":"collection","id":"collection","label":"Collection","info":"Hat Vorrang vor der manuellen Produktauswahl. Leere Collections werden im Shop ausgeblendet."},
+    {"type":"product_list","id":"products","label":"Produkte für Kampagnen","limit":12},
+    {"type":"range","id":"limit","label":"Anzahl Produkte","min":2,"max":12,"step":1,"default":4},
+    {"type":"range","id":"spacing","label":"Abstand oben und unten","min":24,"max":96,"step":8,"unit":"px","default":64}
+  ],
+  "presets":[{"name":"Sweets Produktauswahl"}]
+}
+{% endschema %}

@@ -1,5 +1,9 @@
 <!-- sections/announcement-bar.liquid -->
-{%- if section.settings.show_announcement -%}
+{% if settings.sweets_premium and section.settings.show_announcement %}
+  <div class="sw-announcement">
+    {% for block in section.blocks %}<div {{ block.shopify_attributes }}>{{ block.settings.content | replace: '[icon_arrow]', '→' | remove: '[countdown]' }}</div>{% endfor %}
+  </div>
+{% elsif section.settings.show_announcement %}
   {%- assign theme_name = 'gecko' -%}
   {%- assign label = 'sections.announcement.label' | t -%}
   {%- capture cap_btn -%}{%- if section.settings.close != '0' -%}<div class="t4s-col-item t4s-col-auto t4s-d-none t4s-d-md-block"><button class="t4s-announcement-bar__close t4s-op-0"><svg role="presentation" class="t4s-iconsvg-close" viewBox="0 0 16 14"><path d="M15 0L1 14m14 0L1 0" stroke="currentColor" fill="none" fill-rule="evenodd"></path></svg> {{ 'sections.announcement.close' | t }}</button></div>{%- endif -%}{%- endcapture -%}
